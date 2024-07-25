@@ -92,13 +92,166 @@
       console.log(getDayMassage("Friday"));
       console.log(getDayMassage("Saturday"));
 
-    //   Complex Conditions:
-    function checkEligibility(age, isStudent) {
-        if (condition) {
-            
+      //   Complex Conditions:
+      function checkEligibility(age, isStudent) {
+        if (age < 18 && isStudent) {
+          return "You are a minor student.";
+        } else if (age < 18 && !isStudent) {
+          return "You are a minor non-student.";
+        } else if (age > 18 && age < 24 && isStudent) {
+          return "You are a young adult student.";
+        } else if (age > 18 && age < 24 && !isStudent) {
+          return "You are a young adult non-student.";
+        } else if (age > 25 && isStudent) {
+          return "You are an adult student.";
+        } else if (age > 25 && !isStudent) {
+          return "You are an adult non-student.";
         }
-    }
+      }
 
+      console.log(checkEligibility(17, true));
+      console.log(checkEligibility(13, false));
+      console.log(checkEligibility(19, true));
+      console.log(checkEligibility(19, false));
+      console.log(checkEligibility(28, true));
+      console.log(checkEligibility(28, false));
+
+      // String Comparison and Manipulation:
+      function formatName(name) {
+        let formatName = name.trim().toLowerCase();
+
+        if (formatName === "admin") {
+          return "Welcome, Admin!";
+        } else {
+          return `hello, ${formatName}`;
+        }
+      }
+
+      console.log(formatName("  Nir Forster  "));
+      console.log(formatName("   Nir  "));
+      console.log(formatName("   admin  "));
+
+      // Nested If Statements:
+      function checkDiscount(age, isMember) {
+        if (age < 18) {
+          if (isMember) {
+            return "You get a 20% discount.";
+          } else {
+            return "You get a 10% discount.";
+          }
+        } else if (age >= 65) {
+          if (isMember) {
+            return "You get a 30% discount.";
+          } else {
+            return "You get a 20% discount.";
+          }
+        } else if (age >= 18 && age <= 64) {
+          if (isMember) {
+            return "You get a 10% discount.";
+          } else {
+            return "No discount available.";
+          }
+        }
+      }
+
+      console.log(checkDiscount(16, true));
+      console.log(checkDiscount(16, false));
+      console.log(checkDiscount(70, true));
+      console.log(checkDiscount(70, false));
+      console.log(checkDiscount(30, true));
+      console.log(checkDiscount(30, false));
+
+      // Login Validation:
+      function validateLogin(username, password) {
+        let storedUsername = "Nir Forster";
+        storedPassword = "pass word";
+        if (username === storedUsername && password === storedPassword) {
+          return "Login successful.";
+        } else {
+          return "Invalid username or password.";
+        }
+      }
+      console.log(validateLogin("Nir Forster", "pass word"));
+      console.log(validateLogin("noam", "pass word"));
+      console.log(validateLogin("Nir Forster", "wrong"));
+
+      // Substring Extraction:
+      function extractInitials(firstName, lastName) {
+        let formatFirstName = firstName.charAt(0).toUpperCase();
+        let formatLastName = lastName.charAt(0).toUpperCase();
+        return formatFirstName + "." + formatLastName;
+      }
+      console.log(extractInitials("nir", "forster"));
+      console.log(extractInitials("eden", "arbel"));
+      console.log(extractInitials("guy", "mordechay"));
+
+      // String Replacement:
+      function maskEmail(email) {
+        let maskedEmail = email.replace(/^[^@]+/, "*****");
+        return maskedEmail;
+      }
+      console.log(maskEmail("nirforster@gmail.com"));
+
+      // Nested If-Else:
+      function gradeCalculator(score) {
+        if (score >= 90) {
+          return "A";
+        } else if (score >= 80) {
+          return "B";
+        } else if (score >= 70) {
+          return "C";
+        } else if (score >= 60) {
+          return "D";
+        } else {
+          return "F";
+        }
+      }
+
+      console.log(gradeCalculator(95));
+      console.log(gradeCalculator(85));
+      console.log(gradeCalculator(75));
+      console.log(gradeCalculator(65));
+      console.log(gradeCalculator(55));
+
+      // Complex Boolean Conditions:
+      function canVote(age, isCitizen) {
+        if (age >= 18 && isCitizen) {
+          return "You are eligible to vote.";
+        } else {
+          return "You are not eligible to vote.";
+        }
+      }
+      console.log(canVote(17, true));
+      console.log(canVote(17, false));
+      console.log(canVote(19, true));
+      console.log(canVote(19, false));
+
+      // String and Number Conversion:
+      function convertToUpperCaseAndAddAge(name, age) {
+        let nameUpper = name.toUpperCase();
+        let nameAndAge = nameUpper + age.toString();
+        return nameAndAge;
+      }
+
+      console.log(convertToUpperCaseAndAddAge("nir", 21));
+      console.log(convertToUpperCaseAndAddAge("omer", 50));
+
+      // Capitalize First Letter:
+      function capitalize(word) {
+        let charCapitalized = word.charAt(0).toUpperCase();
+        return charCapitalized + word.substring(1);
+      }
+      console.log(capitalize("hello"));
+
+      // Check Substring:
+      function containsSubstring(mainString, subString) {
+        return mainString.includes(subString)
+      }
+      
+      console.log(containsSubstring('heyo', 'yo'));
+      console.log(containsSubstring("hello", "world"));
+      console.log(containsSubstring("hello world", "world"));
+      console.log(containsSubstring("goodbye", "bye"));
 
 
     </script>
