@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1
+      let firstName = "nir";
+      let lastName = "forster";
+      let age = 21;
+      let isStudent = true;
+
+      // 2
+      if (age > 18) {
+        isAdult = true;
+      } else {
+        isAdult = false;
+      }
+      console.log(isAdult);
+
+      if ((firstName = "Jhon")) {
+        isJhon = true;
+      } else {
+        isJhon = false;
+      }
+      console.log(isJhon);
+
+      // Functions and String Methods:
+      // 1
+      function greet(firstName, lastName) {
+        let fullName = `${firstName} ${lastName}`;
+        return `hello, ${fullName}! welcome to iitc BootCamp`;
+      }
+      let greeting = greet("Nir", "Forster");
+      console.log(greeting);
+
+      // 2
+      function greet(firstName, lastName) {
+        let fullName = `${firstName} ${lastName}`.toUpperCase();
+        return `hello, ${fullName}! welcome to iitc BootCamp`;
+      }
+      console.log(greeting);
+
+      // Conditions:
+      // 1
+      function checkAge(age) {
+        if (age < 13) {
+          return "You are a child";
+        } else if (age >= 13 && age <= 17) {
+          return "You are a teenager";
+        } else if (age >= 18 && age <= 64) {
+          return "You are an adult";
+        } else if (age >= 65) {
+          return "You are a senior";
+        }
+      }
+      console.log(checkAge(5));
+      console.log(checkAge(15));
+      console.log(checkAge(35));
+      console.log(checkAge(78));
+
+      // 2
+      function getDayMassage(dayOfWeek) {
+        switch (dayOfWeek) {
+          case "Monday":
+            return "Start of the work week!";
+          case "Tuesday":
+            return "middle of the week";
+          case "Wednesday":
+            return "its wedensday!";
+          case "Thursday":
+            return "almost the weekend";
+          case "Friday":
+            return "Start of the weekend!";
+          case "Saturday":
+            return "its Saturday";
+          case "Sunday":
+            return "Rest and prepare for the week ahead!";
+          default:
+            return "invalid day!";
+        }
+      }
+
+      console.log(getDayMassage("Sunday"));
+      console.log(getDayMassage("Monday"));
+      console.log(getDayMassage("Tuesday"));
+      console.log(getDayMassage("Wednesday"));
+      console.log(getDayMassage("Thursday"));
+      console.log(getDayMassage("Friday"));
+      console.log(getDayMassage("Saturday"));
+
+    //   Complex Conditions:
+    function checkEligibility(age, isStudent) {
+        if (condition) {
+            
+        }
+    }
+
+
+
+    </script>
+  </body>
+</html>
