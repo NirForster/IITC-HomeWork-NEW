@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // // Basic Syntax and Declaration:
+      // // 1
+      // let fruits = [];
+      // // 2
+      // let numbers = [1, 2, 3, 4, 5];
+      // // 3
+      // let colors = ["red", "green", "blue"];
+      // // 4
+      // let mixed = [1, 2, "hello", "world", true, false];
+      // // 5
+      // let seasons = ["spring", "winter", "summer", "fall"];
+
+      // // Array Length
+      // // 6
+      // console.log(numbers.length);
+      // // 7
+      // let emptyArray = [];
+      // if (emptyArray.length === 0) {
+      //   console.log(true);
+      // } else {
+      //   console.log(false);
+      // }
+      // // 8
+      // let dynamic = [1, 2, 3, "hello", "world"];
+      // console.log(dynamic.length);
+      // // 9
+      // dynamic = [1, 2, 3, "hello", "world", 4];
+      // console.log(dynamic.length);
+      // // 10
+      // dynamic = [1, 2, 3, "hello", 4];
+      // console.log(dynamic.length);
+
+      // // Accessing Elements
+      // // 11
+      // console.log(colors[0]);
+      // // 12
+      // console.log(seasons.length - 1);
+      // console.log(seasons[3]);
+      // // 13
+      // let midIndex = Math.floor(numbers.length / 2);
+      // let midElem = numbers[midIndex];
+      // console.log(midElem);
+      // // 14
+      // console.log(fruits[10]);
+      // // 15
+      // console.log(`the second color is ${colors[1]}`);
+
+      // // Modifying Elements
+      // // 16
+      // fruits[0] = "apple";
+      // console.log(fruits);
+      // // 17
+      // let lastNumElemIndex = numbers.length - 1;
+      // numbers[lastNumElemIndex] = 10;
+      // console.log(numbers);
+      // // 18
+      // numbers[2] = numbers[2] * 2;
+      // console.log(numbers);
+      // // 19
+      // for (let index = 0; index < colors.length; index++) {
+      //   colors[index] = colors[index].toUpperCase();
+      // }
+      // console.log(colors);
+      // // 20
+      // let seasonsFirstElem = seasons[0];
+      // seasons[0] = seasons[seasons.length - 1];
+      // seasons[seasons.length - 1] = seasonsFirstElem;
+      // console.log(seasons);
+
+      // // Array Methods: push() and pop()
+      // // 21
+      // fruits.push("orange");
+      // console.log(fruits);
+      // // 22
+      // numbers.pop(numbers.length - 1);
+      // console.log(numbers);
+      // // 23
+      // colors.push("brown", "yellow", "black");
+      // console.log(colors);
+      // // 24
+      // let newNumbers = [];
+      // for (let i = 0; i < 5; i++) {
+      //   let number = i;
+      //   number++;
+      //   newNumbers.push(number);
+      // }
+      // console.log(newNumbers);
+      // // 25
+      // console.log(numbers);
+
+      // for (let i = 0; i < numbers.length; i) {
+      //   let removedElement = numbers.pop();
+      //   console.log(removedElement);
+      // }
+      // // Array Methods: unshift() and shift()
+      // // 26
+      // let fruits = ["apple", "banana", "cherry"];
+      // fruits.unshift("mango");
+      // console.log(fruits);
+      // // 27
+      // let numbers = [10, 20, 30, 40];
+      // let removedElement = numbers.shift();
+      // console.log(removedElement);
+      // console.log(numbers);
+      // // 28
+      // numbers.unshift(1, 2, 3);
+      // console.log(numbers);
+      // // 29
+      // let newArray = [];
+      // for (let i = 5; i >= 1; i--) {
+      //   newArray.unshift(i);
+      // }
+      // console.log(newArray);
+      // // 30
+      // let arrayToEmpty = [1, 2, 3, 4, 5];
+      // while (arrayToEmpty.length > 0) {
+      //   let element = arrayToEmpty.shift();
+      //   console.log(element);
+      // }
+      // console.log(arrayToEmpty);
+      // // 31
+      // let colors = ["red", "blue", "green", "yellow"];
+      // let indexGreen = colors.indexOf("green");
+      // console.log(indexGreen);
+      // // 32
+      // let seasons = ["spring", "summer", "autumn", "winter"];
+      // let hasWinter = seasons.indexOf("winter") !== -1;
+      // console.log(hasWinter);
+      // // 33
+      // colors.push("red");
+      // let lastIndexRed = colors.lastIndexOf("red");
+      // console.log(lastIndexRed);
+      // // 34
+      // let duplicateValues = [1, 2, 3, 2, 4, 2, 5];
+      // let firstIndex2 = duplicateValues.indexOf(2);
+      // let lastIndex2 = duplicateValues.lastIndexOf(2);
+      // console.log(firstIndex2);
+      // console.log(lastIndex2);
+      // // 35
+      // let numbers = [10, 20, 30, 40, 50];
+      // let containsThirty = numbers.indexOf(30) !== -1;
+      // console.log(containsThirty);
+      // // 36
+      // let fruits = ["mango", "apple", "banana", "cherry"];
+      // let hasApple = fruits.includes("apple");
+      // console.log(hasApple);
+      // // 37
+      // let numbers = [10, 20, 30, 40];
+      // let hasTen = numbers.includes(10);
+      // console.log(hasTen);
+      // // 38
+      // let colors = ["red", "green", "yellow", "blue"];
+      // let hasBlueInSecondHalf = colors.includes(
+      //   "blue",
+      //   Math.floor(colors.length / 2)
+      // );
+      // console.log(hasBlueInSecondHalf);
+      // // 39
+      // function arrayIncludes(arr, value) {
+      //   return arr.includes(value);
+      // }
+
+      // console.log(arrayIncludes(fruits, "banana"));
+      // console.log(arrayIncludes(numbers, 50));
+      // // 40
+      // let searchTerm = "cherry";
+      // let message = fruits.includes(searchTerm)
+      //   ? `${searchTerm} is in the array.`
+      //   : `${searchTerm} is not in the array.`;
+      // console.log(message);
+      // searchTerm = "grape";
+      // if (fruits.includes(searchTerm)) {
+      //   console.log(`${searchTerm} is in the array.`);
+      // } else {
+      //   console.log(`${searchTerm} is not in the array.`);
+      // }
+      // // 41
+      // let numbers = [10, 20, 30, 40, 50];
+      // let firstThreeNumbers = numbers.slice(0, 3);
+      // console.log(firstThreeNumbers);
+      // // 42
+      // let colors = ["red", "green", "blue", "yellow"];
+      // let lastTwoColors = colors.slice(-2);
+      // console.log(lastTwoColors);
+      // // 43
+      // let seasons = ["spring", "summer", "autumn", "winter"];
+      // let middleSeasons = seasons.slice(1, 3);
+      // console.log(middleSeasons);
+      // // 44
+      // let originalArray = [1, 2, 3, 4, 5];
+      // let copiedArray = originalArray.slice();
+      // console.log(copiedArray);
+      // // 45
+      // let mixedArray = [1, 2, 3, 4, 5, 6, 7, 8];
+      // let middleStart = Math.floor((mixedArray.length - 1) / 2);
+      // let middleEnd = Math.ceil((mixedArray.length + 1) / 2);
+      // let middleElements = mixedArray.slice(middleStart, middleEnd);
+      // console.log(middleElements);
+      // // 46
+      // let fruits = ["apple", "banana", "cherry", "date", "fig"];
+      // let removedFruits = fruits.splice(2, 2);
+      // console.log(fruits);
+      // console.log(removedFruits);
+      // // 47
+      // let numbers = [10, 20, 30, 40, 50];
+      // numbers.splice(2, 1, 25, 35);
+      // console.log(numbers);
+      // // 48
+      // let colors = ["red", "green", "blue", "yellow"];
+      // colors.splice(2, 0, "cyan", "magenta", "black");
+      // console.log(colors);
+      // // 49
+      // let fruits = ["apple", "banana", "cherry"];
+      // fruits.splice(0, 1, "mango", "orange");
+      // console.log(fruits);
+      // // 50
+      // let arrayToEmpty = [1, 2, 3, 4, 5];
+      // arrayToEmpty.splice(0, arrayToEmpty.length);
+      // console.log(arrayToEmpty); 
+    </script>
+  </body>
+</html>
