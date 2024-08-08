@@ -1,0 +1,39 @@
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+
+}
+
+* {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400, 700;
+}
+
+#faqCard {
+  background-color: white;
+  border-radius: 16px;
+  width: 65%;
+  height: 65%;
+  box-shadow: 0px 25px 25px -25px;
+  flex-direction: column-reverse;
+
+} 
+.textCard{
+    color: hsl(237, 12%, 33%);
+    color: hsl(240, 6%, 50%)
+}
+hr{
+    color: hsl(240, 5%, 91%);
+}
+
+h1{
+    color: black;
+}
+.questions{
+    border: none;
+}
