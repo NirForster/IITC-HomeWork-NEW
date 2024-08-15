@@ -1,4 +1,4 @@
---GROUP FUNCTIONS
+﻿--GROUP FUNCTIONS
 --Q1
 --select TOP 1 LastName
 --from Employees
@@ -91,24 +91,53 @@
 --group by city
 
 --Q16
-select 
-CategoryID,
-SupplierID,
-max(UnitPrice) as maxUnitPrice,
-min(UnitPrice) as minUnitPrice,
-avg(UnitPrice) as avgUnitPrice,
-Count(UnitPrice) as UnitPriceCount
-from Products
-group by CategoryID, SupplierID
+--select 
+--CategoryID,
+--SupplierID,
+--max(UnitPrice) as maxUnitPrice,
+--min(UnitPrice) as minUnitPrice,
+--avg(UnitPrice) as avgUnitPrice,
+--Count(ProductID) as ProductIDCount
+--from Products
+--group by CategoryID, SupplierID
 
 --Q17
+--select CategoryID,
+--max(UnitPrice) as maxUnitPrice
+--from products 
+--where UnitPrice > 40
+--group by CategoryID
 
+--SELECT 
+--    CategoryID,
+--    MAX(UnitPrice) AS maxUnitPrice
+--FROM 
+--    Products
+--GROUP BY 
+--    CategoryID
+--HAVING 
+--    MAX(UnitPrice) > 40;
 
 --Q18
-
+--select SupplierID,
+--avg(UnitPrice) as avgUnitPrice
+--from products
+--group by SupplierID
+--having avg(UnitPrice) > 40
 
 --Q19
+--select 
+--sum(UnitsOnOrder) as totalUnitsOnOrder,
+--sum(UnitsInStock) as totalUnitsInStock,
+--c.CategoryName
+--from products p 
+--join Categories c on p.CategoryID = c.CategoryID
+--where c.CategoryName like '%c%'
+--group by c.CategoryID, CategoryName
+--having sum(p.UnitsOnOrder) > 100
+--order by c.CategoryName asc;
 
+--שאלות אתגר
 --Q20
 
 --Q21
