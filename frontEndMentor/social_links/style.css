@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+/* @import url("../social_links_by_me/assets/fonts/Inter-VariableFont_slnt\,wght.ttf"); */
+
+body {
+  color: white;
+  font-family: inter;
+  font-size: 14px;
+  background-color: rgb(20, 20, 20);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: rgb(31, 31, 31);
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+img {
+  border-radius: 50%;
+  width: 100px;
+  margin-bottom: 16px;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.location {
+  color: hsl(75, 94%, 57%);
+  font-weight: 400;
+  font-size: 14px;
+}
+.description {
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+button {
+  background-color: #333333;
+  border-radius: 8px;
+  font-weight: 600;
+  color: white;
+  padding: 16px;
+  margin-top: 16px;
+  display: inline-block;
+  min-width: 300px;
+  border: none;
+}
+button:hover {
+  background-color: orange;
+  transition: 700ms;
+}
