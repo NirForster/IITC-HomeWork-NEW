@@ -1,0 +1,95 @@
+body {
+  color: red;
+}
+
+.yellowBox {
+  background-color: yellow;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  margin: 32px;
+  padding: 16px;
+}
+
+span {
+  color: black;
+}
+
+#third {
+  color: white;
+  background-color: grey;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* Circles */
+
+.circles {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  display: inline-block;
+}
+
+#circles2 {
+  background-color: blue;
+}
+#circles3 {
+  background-color: green;
+}
+
+/* Black Boxes */
+.redBox {
+  background-color: red;
+  /* position: relative; */
+  width: 75%;
+  height: 150px;
+  margin: auto;
+}
+
+#left {
+  margin-right: auto;
+}
+
+#right {
+  /* position: absolute;
+  top: 25%;
+  right: 0; */
+  margin-left: auto;
+}
+
+#middle {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); Adjusts for the element’s own width and height */
+  margin-inline: auto;
+  border-radius: 42.5%;
+  box-shadow: 8px 6px 12px rgba(255, 255, 255, 0.8);
+}
+
+.blackBox {
+  background-color: black;
+  color: white;
+  padding: 2px;
+  width: fit-content;
+}
+
+/* buttons */
+button {
+  background-color: rgb(168, 80, 219);
+  color: white;
+  font-size: 16px;
+  margin-left: 32px;
+  padding: 8px;
+  border-width: 0;
+}
+
+button:nth-child(2) {
+  border-radius: 16px;
+  margin-left: 4px;
+}
