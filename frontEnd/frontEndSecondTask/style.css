@@ -1,0 +1,49 @@
+body {
+  color: white;
+  margin: 0;
+  height: 1000px;
+}
+
+.container {
+  background-color: grey;
+}
+
+.header {
+  background-color: rgb(99, 195, 195);
+  position: sticky;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px;
+}
+
+.sidebar {
+  background-color: blueviolet;
+  position: fixed;
+  right: 0;
+  top: 70px; /* Aligns the sidebar below the header */
+  width: 200px;
+  height: 100%; /* Sidebar spans the full height */
+  z-index: 500; /* Ensures it's above the main content */
+  padding: 10px;
+}
+
+.main-content {
+  background-color: brown;
+  position: relative;
+  margin-right: 220px; /* Adds space for the sidebar */
+  height: 100%;
+  padding: 20px;
+  z-index: 100;
+}
+
+.Footer {
+  background-color: antiquewhite;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures footer is above other content */
+  text-align: center;
+  padding: 10px;
+}
