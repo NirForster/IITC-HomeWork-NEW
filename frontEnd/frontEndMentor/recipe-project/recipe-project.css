@@ -1,0 +1,116 @@
+@font-face {
+  font-family: young-serif;
+  src: url("/PRACTICE/recipe-page-main/assets/fonts/young-serif/YoungSerif-Regular.ttf");
+}
+
+@font-face {
+  font-family: outfit;
+  src: url("/PRACTICE/recipe-page-main/assets/fonts/outfit/Outfit-VariableFont_wght.ttf");
+}
+
+:root {
+  --width: 740px;
+
+  --clr-primary-400: hsl(14, 45%, 36%);
+  --clr-accent-600: hsl(332, 51%, 32%);
+  --clr-accent-100: hsl(330, 100%, 98%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(30, 54%, 90%);
+  --clr-neutral-300: hsl(30, 18%, 87%);
+  --clr-neutral-400: hsl(30, 54%, 90%);
+  --clr-neutral-800: hsl(30, 10%, 34%);
+  --clr-neutral-900: hsl(24, 5%, 18%);
+
+  --ff-bass: outfit;
+  --ff-accent: young-serif;
+
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+}
+body {
+  height: 100%;
+  background-color: var(--clr-neutral-200);
+  font-family: var(--ff-bass);
+  margin: 0;
+  color: var(--clr-neutral-800);
+}
+img {
+  display: block;
+  max-width: 100%;
+  border-radius: 16px;
+}
+.card {
+  max-width: var(--width);
+  margin-inline: auto;
+  background-color: var(--clr-neutral-100);
+  margin-block: 96px;
+  padding: 40px;
+  border-radius: 24px;
+}
+.preparation {
+  background-color: var(--clr-accent-100);
+  border-radius: 12px;
+  padding: 20px;
+  /* padding-left: 8px; */
+}
+h1 {
+  color: var(--clr-neutral-900);
+  font-family: var(--ff-accent);
+}
+h2 {
+  color: var(--clr-primary-400);
+  font-weight: var(--fw-regular);
+  font-family: var(--ff-accent);
+}
+h3 {
+  color: var(--clr-accent-600);
+}
+ul {
+  padding-left: 24px;
+}
+li {
+  padding-left: 16px;
+  padding-block: 8px;
+}
+ol {
+  padding-left: 20px;
+}
+::marker {
+  color: var(--clr-primary-400);
+  font-weight: var(--fw-semi-bold);
+}
+.bold {
+  font-weight: bold;
+}
+
+.right {
+  font-weight: bold;
+  color: var(--clr-primary-400);
+}
+table {
+  display: block;
+  padding-bottom: 16px;
+}
+
+tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-inline: 2rem;
+  padding-block: 0.5rem;
+}
+tbody {
+  display: block;
+  width: 100%;
+}
+tbody > :not(:last-child) {
+  border-bottom: 1px solid var(--clr-neutral-400);
+}
