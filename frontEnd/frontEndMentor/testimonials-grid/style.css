@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  background-color: hsl(230, 37%, 91%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+main {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 400;
+  color: white;
+  display: grid;
+  grid-template-areas:
+    "Daniel-Clifford Daniel-Clifford Jonathan-Walters Kira-Whittle"
+    "Jeanette-Harmon Patrick-Abrams Patrick-Abrams Kira-Whittle";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto, auto;
+  max-width: 1200px;
+}
+
+/* designing the cards */
+article {
+  border-radius: 8px;
+  margin: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* name and picture */
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-container img {
+  margin-right: 10px;
+  width: 35px;
+  height: 35px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.quotation-pic {
+  border: none;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  right: 15%;
+  opacity: 0.7;
+}
+
+h1 {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+}
+
+h2 {
+  opacity: 50%;
+  font-size: 12px;
+  margin: 0;
+}
+
+/* paragraphs design*/
+p {
+  margin: 16px 0 0 0;
+  opacity: 0.7;
+}
+
+.para-highlighted {
+  color: white;
+  opacity: 100%;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#Jeanette-Harmon .para-highlighted,
+#Kira-Whittle .para-highlighted {
+  color: black;
+}
+
+#Kira-Whittle .para-highlighted {
+  max-height: 74px;
+}
+
+#Daniel-Clifford .para-highlighted {
+  z-index: 1;
+}
+
+/* articles design*/
+#Daniel-Clifford {
+  background-color: hsl(263, 55%, 52%);
+  grid-area: Daniel-Clifford;
+  position: relative;
+}
+#Jonathan-Walters {
+  background-color: hsl(217, 19%, 35%);
+  grid-area: Jonathan-Walters;
+}
+#Kira-Whittle {
+  background-color: hsl(0, 0%, 100%);
+  grid-area: Kira-Whittle;
+  color: black;
+}
+#Jeanette-Harmon {
+  background-color: hsl(0, 0%, 100%);
+  grid-area: Jeanette-Harmon;
+  color: black;
+}
+#Patrick-Abrams {
+  background-color: hsl(219, 29%, 14%);
+  grid-area: Patrick-Abrams;
+}
+
+/* media query */
+@media screen and (max-width: 376px) {
+  body {
+    min-height: 100%; /* Let the body expand with content */
+  }
+  main {
+    grid-template-areas:
+      "Daniel-Clifford"
+      "Jonathan-Walters"
+      "Jeanette-Harmon"
+      "Patrick-Abrams"
+      "Kira-Whittle";
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+/* problems:
+expanding text over entire card while font size remains at 13px */
