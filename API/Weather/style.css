@@ -1,0 +1,12 @@
+body {
+  display: grid;
+  grid-template-areas: "first second";
+  grid-template-columns: 1fr 1fr;
+}
+
+.london-weather-container {
+  grid-area: first;
+}
+.home-weather-container {
+  grid-area: second;
+}
