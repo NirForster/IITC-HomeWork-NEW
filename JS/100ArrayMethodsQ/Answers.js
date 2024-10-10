@@ -94,3 +94,83 @@
 //   return accumulator;
 // }, {});
 // console.log(countOccurrences);
+
+// const arr = [1, 2, 3, 4, 5];
+// const newArr = arr.some((number) => number > 3);
+// console.log(newArr);
+
+// const arr = [2, 4, 6, 8, 10];
+// const newArr = arr.every((number) => number % 2 === 0);
+// console.log(newArr);
+
+// const arr = ["תפוח", "בננה", "דובדבן"];
+// const newArr = arr.some((word) => word.length > 6);
+// console.log(newArr);
+
+// const arr = ['חתול', 'כלב', 'פיל'];
+// const newArr = arr.some((word) => word.length > 6);
+// console.log(newArr);
+
+// const arr = [false, false, true, false];
+// const newArr = arr.some((boolean) => boolean === true);
+// console.log(newArr);
+
+// const arr = [1, 2, 3, 4, 5];
+// const numOver3 = arr.find((num) => num > 3);
+// console.log(numOver3);
+
+// const arr = [1, 3, 4, 5, 6];
+// const index = arr.findIndex((num) => num % 2 === 0);
+// console.log(index);
+
+// const arr = ["תפוח", "בננה", "דובדבן"];
+// const strLonger5 = arr.find((str) => str.length > 5);
+// console.log(strLonger5);
+
+// const arr = ["תפוח", "בננה", "דובדבן", "תמר"];
+// const indexOfWord = arr.findIndex((word) => word === "תמר");
+// console.log(indexOfWord);
+
+// const arr = [1, 2, 3, -4, 5, -6];
+// const firstNegativeNum = arr.find((num) => num < 0);
+// console.log(firstNegativeNum);
+
+// const arr = [3, 1, 4, 1, 5, 9, 2, 6, 5];
+// const newArr = arr.sort((num1, num2) => num1 - num2);
+// console.log(newArr);
+
+// const arr = ["בננה", "דובדבן", "תפוח", "תמר"];
+// arr.sort();
+// console.log(arr);
+
+// const arr = [3, 1, 4, 1, 5, 9, 2, 6, 5];
+// const newArr = arr.sort((num1, num2) => num2 - num1);
+// console.log(newArr);
+
+// const arr = ["בננה", "דובדבן", "תפוח", "תמר"];
+// arr.sort((word1, word2) => word1.length - word2.length);
+// console.log(arr);
+
+// const arr = [
+//   { name: "יוחנן", age: 25 },
+//   { name: "יעל", age: 30 },
+//   { name: "בועז", age: 20 },
+// ];
+// arr.sort((word1, word2) => word1.age - word2.age);
+// console.log(arr);
+
+// const arr = [1, [2, 3], [4, [5, 6]]];
+// const newArr = arr.flat(2);
+// console.log(newArr);
+
+// const arr = [1, [2, [3, [4]]]];
+// const newArr = arr.flat(2);
+// console.log(newArr);
+
+// const arr = ["א", ["ב", "ג"], "ד"];
+// const newArr = arr.flat();
+// console.log(newArr);
+
+// const arr = [1, [2, [3, [4, [5]]]]];
+// const newArr = arr.flat(Infinity);
+// console.log(newArr);
