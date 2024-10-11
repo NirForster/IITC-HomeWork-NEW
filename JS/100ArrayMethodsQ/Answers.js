@@ -174,3 +174,28 @@
 // const arr = [1, [2, [3, [4, [5]]]]];
 // const newArr = arr.flat(Infinity);
 // console.log(newArr);
+
+// const arr = ["א", "ב", "ג", "ד"];
+// arr.forEach((letter, index) => {
+//   console.log(`Index: ${index}, Value: ${letter}`);
+// });
+
+// const arr = ['תפוח', 'בננה', 'אבטיח', 'תמר'];
+// const newArr = arr.map((num, index) => {
+//   return { index, num };
+// });
+// console.log(newArr);
+
+// const arr = ['א', 'ב', 'א', 'ג', 'ב', 'א'];
+// const newArr = arr.filter((word) => {
+//   return word.charAt(0) === "א";
+// });
+// console.log(newArr);
+
+// const arr = ["א", "ב", "א", "ג", "ב", "א"];
+// const frequency = arr.reduce((acc, current) => {
+//   acc[current] = (acc[current] || 0) + 1;
+//   return acc;
+// }, {});
+
+// console.log(frequency);
