@@ -9,89 +9,108 @@ body {
   font-family: "Overpass", sans-serif;
 }
 
-.containerCard {
-  background-color: hsl(213, 61%, 10%);
-  border-radius: 24px;
+.container {
+  background-color: hsl(213, 19%, 18%);
+  border-radius: 28px;
   padding: 24px;
+  color: hsl(217, 12%, 63%);
+  max-width: 374px;
+  max-height: 374px;
 }
 
 h1 {
   color: hsl(0, 0%, 100%);
+  margin-bottom: 0px;
+  font-size: 28px;
 }
 
-/* preview card */
-.previewCardContainer {
+p {
+  font-size: 15px;
+}
+
+button {
+  font-family: "Overpass", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  padding: 12px;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+/* <!-- Rating state start --> */
+.rating-state-container {
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
 }
 
-.starContainer {
-  display: flex;
-  background-color: hsl(215, 18%, 19%);
+.starImg {
+  background-color: hsl(215, 20%, 23%);
+  padding: 14px;
+  margin: 12px 0;
   border-radius: 100%;
 }
 
-.previewText {
-  color: hsl(217, 12%, 63%);
-  font-size: 15px;
-  display: flex;
-  justify-content: center;
-}
-
-.numberButtonsContainer {
+.number-buttons-container {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  margin-bottom: 24px;
+  margin-top: 16px;
 }
 
-.numberButtons {
+.number-buttons {
   color: hsl(216, 12%, 54%);
   background-color: hsl(215, 20%, 23%);
   border-radius: 100%;
-  font-size: 15px;
-  border: none;
+  width: 48px;
+  height: 48px;
 }
 
-.submitButton {
+.submit-button {
   color: hsl(213, 19%, 18%);
   background-color: hsl(25, 97%, 53%);
   border-radius: 24px;
-  font-size: 15px;
+  width: 100%;
 }
 
-/* thank you card */
-.thankYouContainerCard {
+/* <!-- Thank you state start --> */
+.thank-you-state-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex-direction: column;
 }
 
-.phoneImgAndRatingContainer {
-  display: flex;
-  flex-direction: column;
+.illustration-thank-you {
+  padding: 4px;
+  margin: 12px 0;
 }
 
-.illustration-thank-you.svg {
-  padding: 24px;
-}
-
-.userRatingCard {
-  color: hsl(25, 97%, 53%);
+.users-rating {
   background-color: hsl(215, 20%, 23%);
+  color: hsl(25, 97%, 53%);
+
   padding: 12px;
   border-radius: 24px;
 }
 
-.thankYouTextCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.thank-you-p {
+  text-align: center;
+  padding: 16px;
+  margin: 0px 0px;
 }
 
-.thankYouText {
-  color: hsl(217, 12%, 63%);
-  font-size: 15px;
-  font-weight: 400, 700;
-  display: flex;
-  align-items: center;
+/* DOM TOGGLE CLASSES */
+.active {
+  background-color: hsl(25, 97%, 53%);
+  color: white;
+}
+
+.hidden {
+  display: none;
 }

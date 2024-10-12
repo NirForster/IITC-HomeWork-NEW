@@ -3,70 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <link rel="stylesheet" href="style.css" />
     <title>Frontend Mentor | Interactive rating component</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Rating state start -->
-    <!-- <div class="containerCard" class="previewCardContainer">
-      <div class="starContainer">
-        <img
-          class="starImg"
-          src="/interactive-rating-component-main/images/icon-star.svg"
-          alt="icon-star.svg"
-        />
+    <div class="rating-state-container container">
+      <img class="starImg" src="./images/icon-star.svg" alt="icon-star.svg" />
+      <div class="text-container"></div>
+      <h1>How did we do?</h1>
+      <p>
+        Please let us know how we did with your support request. All feedback is
+        appreciated to help us improve our offering!
+      </p>
+      <div class="number-buttons-container">
+        <button class="number-buttons">1</button>
+        <button class="number-buttons">2</button>
+        <button class="number-buttons">3</button>
+        <button class="number-buttons">4</button>
+        <button class="number-buttons">5</button>
       </div>
-      <div class="previewTextCard">
-        <h1>How did we do?</h1>
-
-        <div class="previewText">
-          Please let us know how we did with your support request. All feedback
-          is appreciated to help us improve our offering!
-        </div>
-      </div>
-
-      <div class="numberButtonsContainer">
-        <button class="numberButtons">1</button>
-        <button class="numberButtons">2</button>
-        <button class="numberButtons">3</button>
-        <button class="numberButtons">4</button>
-        <button class="numberButtons">5</button>
-      </div>
-
-      <button class="submitButton">Submit</button>
-    </div> -->
+      <button class="submit-button">SUBMIT</button>
+    </div>
     <!-- Rating state end -->
 
     <!-- Thank you state start -->
-    <div class="containerCard">
-      <div class="thankYouContainerCard">
-        <div class="phoneImgAndRatingContainer">
-          <img class="illustration-thank-you.svg"
-            src="/images/illustration-thank-you.svg"
-            alt="illustration-thank-you.svg"
-          />
-          <div class="userRatingCard">
-            You selected insert DOM manipulation out of 5
-          </div>
-        </div>
-        <div class="thankYouTextCard">
-          <h1>Thank you!</h1>
+    <div class="thank-you-state-container container hidden">
+      <img
+        class="illustration-thank-you"
+        src="./images/illustration-thank-you.svg"
+        alt="illustration-thank-you.svg"
+      />
 
-          <div class="thankYouText">
-            We appreciate you taking the time to give a rating. If you ever need
-            more support, don’t hesitate to get in touch!
-          </div>
-        </div>
-      </div>
+      <p class="users-rating">
+        You selected <span id="selected-rating"></span> out of 5
+      </p>
+      <h1>Thank you!</h1>
+      <p class="thank-you-p">
+        We appreciate you taking the time to give a rating. If you ever need
+        more support, don’t hesitate to get in touch!
+      </p>
     </div>
     <!-- Thank you state end -->
+    <script src="main.js"></script>
   </body>
 </html>
