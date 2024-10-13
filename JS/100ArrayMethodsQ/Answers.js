@@ -186,12 +186,6 @@
 // });
 // console.log(newArr);
 
-// const arr = ['א', 'ב', 'א', 'ג', 'ב', 'א'];
-// const newArr = arr.filter((word) => {
-//   return word.charAt(0) === "א";
-// });
-// console.log(newArr);
-
 // const arr = ["א", "ב", "א", "ג", "ב", "א"];
 // const frequency = arr.reduce((acc, current) => {
 //   acc[current] = (acc[current] || 0) + 1;
@@ -199,3 +193,79 @@
 // }, {});
 
 // console.log(frequency);
+
+// const arr = ["שלום", "עולם", "גאווהסקריפט"];
+// const newArr = arr.some((word) => word.includes("ז"));
+// console.log(newArr);
+
+// const arr = [2, 4, 6, 8];
+// const newArr = arr.every((num) => num % 2 === 0);
+// console.log(newArr);
+
+// const arr = [
+//   { id: 1, status: "לא פעיל" },
+//   { id: 2, status: "פעיל" },
+// ];
+// const newArr = arr.find((word) => word.status === "פעיל");
+// console.log(newArr);
+
+// const arr = ["Python", "JavaScript", "Ruby", "Java"];
+// const newArr = arr.sort((a, b) => a.length - b.length);
+// console.log(newArr);
+
+// const arr = [1, [2, [3]], [4, [5]]];
+// const newArr = arr.flat(1);
+// console.log(newArr);
+
+// const arr = ["ש", "ל", "ו", "ם"];
+// let word = "";
+// arr.forEach((letter) => (word += letter));
+// console.log(word);
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const newArr = arr.filter((num) => num % 3 === 0);
+// console.log(newArr);
+
+// const arr = ["קצר", "בינוני", "הכי ארוך", "ארוך יותר"];
+// const newArr = arr.reduce((longest, current) => {
+//   return current.length > longest.length ? current : longest;
+// });
+// console.log(newArr);
+
+// const arr = [1, 3, 5, 7, 9];
+// const newArr = arr.some((num) => num % 2 === 0);
+// console.log(newArr);
+
+// const arr = ["תפוח", "תפ", "תפוז"];
+// const newArr = arr.every((word) => word.startsWith("תפ"));
+// console.log(newArr);
+
+// const arr = [
+//   { id: 1, completed: false },
+//   { id: 2, completed: true },
+// ];
+// const newArr = arr.find((word) => word.completed);
+// console.log(newArr);
+
+// const arr = ["תפוח", "בננה", "דובדבן"];
+// const newArr = arr.findIndex((word) => word === "בננה");
+// console.log(newArr);
+
+// const arr = [
+//   { name: "יוחנן", age: 25 },
+//   { name: "יעל", age: 30 },
+//   { name: "בועז", age: 20 },
+// ];
+// const newArr = arr.sort((a, b) => a.name.localeCompare(b.name));
+// console.log(newArr);
+
+// const arr = [1, [2, 3], [4, [5, 6]]];
+// const newArr = arr.flat(2);
+// console.log(newArr);
+
+// const string = "שלום";
+// const characters = string.split(""); // מפרק את המחרוזת למערך של תווים
+
+// characters.forEach((character) => {
+//   console.log(character); // מדפיס כל תו למסוף
+// });
