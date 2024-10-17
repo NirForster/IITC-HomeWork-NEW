@@ -269,3 +269,66 @@
 // characters.forEach((character) => {
 //   console.log(character); // מדפיס כל תו למסוף
 // });
+
+// const arr = ["תפוח", "בננה", "דובדבן"];
+// const newArr = arr.map((fruit) => fruit.charAt(0));
+// console.log(newArr);
+
+// const arr = ["א", "אב", "אבג", "אבגד"];
+// const newArr = arr.filter((word) => word.length > 3);
+// console.log(newArr);
+
+// const arr = ["תפוח", "בננה", "דובדבן"];
+// const newArr = arr.reduce(
+//   (total, currentWord) => total + currentWord.length,
+//   0
+// );
+// console.log(newArr);
+
+// const arr = ["תפוח", "בננה", "דובדבן"];
+// const newArr = arr.reduce(
+//   (total, currentWord) => total + currentWord.length,
+//   0
+// );
+// console.log(newArr);
+
+// const arr = ["hello", "world", "javascript"];
+// const newArr = arr.some((word) => word.length > 10);
+// console.log(newArr);
+
+// const arr = [10, 20, 30, 40, 50];
+// const newArr = arr.every((num) => num > 5);
+// console.log(newArr);
+
+// const arr = ["ספר", "דלת", "חלון"];
+// const newArr = arr.find((str) => str.includes("ו"));
+// console.log(newArr);
+
+// const arr = [5, 10, 15, 20];
+// const newArr = arr.findIndex((num) => num > 10);
+// console.log("index is " + newArr);
+
+// const arr = ["אאא", "בב", "ג"];
+// const newArr = arr.sort((a, b) => a.length - b.length);
+// console.log(newArr);
+
+// const arr = [1, [2, [3, [4]]]];
+// const newArr = arr.flat(3);
+// console.log(newArr);
+
+// const arr = [1, 4, 9, 16];
+// const newArr = [];
+// arr.forEach((num) => newArr.push(Math.sqrt(num)));
+// console.log(newArr);
+
+// const arr = ["א", "ב", "ג"];
+// const newArr = arr.map((str) => str + str);
+// console.log(newArr);
+
+// const arr = [5, 10, 15, 20, 25];
+// const newArr = arr.filter((num) => num >= 10 && num <= 20);
+// console.log(newArr);
+
+const arr = [5, 10, 15, 20, 25];
+const newArr = arr.filter((num) => num >= 10 && num <= 20);
+console.log(newArr);
