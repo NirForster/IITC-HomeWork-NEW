@@ -1,9 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-/* @import url("../social_links_by_me/assets/fonts/Inter-VariableFont_slnt\,wght.ttf"); */
-
 body {
   color: white;
-  font-family: inter;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   background-color: rgb(20, 20, 20);
   display: flex;
@@ -34,7 +32,7 @@ img {
 }
 .location {
   color: hsl(75, 94%, 57%);
-  font-weight: 400;
+  font-weight: 700;
   font-size: 14px;
 }
 .description {
@@ -54,5 +52,11 @@ button {
 }
 button:hover {
   background-color: orange;
-  transition: 700ms;
+  transition: 500ms;
+}
+
+@media screen and (max-width: 375) {
+  button {
+    color: pink;
+  }
 }
