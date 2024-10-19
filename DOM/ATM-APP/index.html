@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- welcoming screen -->
+    <div id="welcome-screen" class="container">
+      <a href="./css-beer/src/beerIndex.html" id="chill"
+        >Click me if you wanna chill</a
+      >
+      <h1>Welcom To The ATM!</h1>
+      <button class="insert-card-btn">Insert Card</button>
+    </div>
+
+    <!-- password screen -->
+    <div id="password-screen" class="container hidden">
+      <h1>Enter PIN</h1>
+      <input
+        type="password"
+        id="pin-input"
+        maxlength="4"
+        placeholder="Enter PIN"
+      />
+      <button class="enter-pin-btn">Submit</button>
+      <p class="pin-message">You have <span class="tries">3</span> tries</p>
+    </div>
+
+    <!-- actions screen -->
+    <div id="actions-screen" class="container hidden">
+      <h1>Choose Action</h1>
+      <p>Balance: <span id="balance">XXX</span></p>
+      <button class="withdraw-action-btn">Withdraw</button>
+      <button class="deposit-action-btn">Deposit</button>
+    </div>
+
+    <!-- Withdraw screen -->
+    <div id="withdraw-screen" class="container hidden">
+      <h1>Enter Amount To Withdraw</h1>
+      <input
+        type="number"
+        placeholder="Enter Amount"
+        id="Withdraw-amount-inp"
+      />
+      <button class="confirm-btn hover-red">Confirm Withdraw</button>
+      <button class="exit-action-btn">Exit</button>
+      <p class="validate-withdraw-message"></p>
+    </div>
+
+    <!-- deposit screen -->
+    <div id="deposit-screen" class="container hidden">
+      <h1>Enter Amount To Deposit</h1>
+      <input
+        type="number"
+        placeholder="Enter Amount"
+        class="deposit-amount-inp"
+      />
+      <button class="confirm-btn hover-red">Confirm Deposit</button>
+      <button class="exit-action-btn">Exit</button>
+      <p class="validate-depost-message"></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
