@@ -438,3 +438,18 @@ body {
 .button-4:-webkit-details-marker {
   display: none;
 }
+
+.message {
+  font-size: 16px;
+  animation: grow 8s ease-in-out forwards;
+  color: wheat;
+}
+
+@keyframes grow {
+  0% {
+    font-size: 0;
+  }
+  100% {
+    font-size: 24px;
+  }
+}
