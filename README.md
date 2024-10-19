@@ -1,5 +1,4 @@
-﻿
-# 🌟 IITC-HomeWork-NEW 🌟
+﻿# 🌟 IITC-HomeWork-NEW 🌟
 
 Welcome to my Homework repository! 🎉 This repository contains all my homework and projects as part of my Full Stack Web Development studies. 💻✨
 
@@ -29,16 +28,23 @@ This repository showcases my progress and learning as a full stack web developme
 
 ## 💼 Projects
 
-### 📋 Employee Management Project
+### 📋 Employee Management Web Application
 
 In this project, I created a frontend-only Employee Management application that follows the MVC (Model-View-Controller) architecture. The data is stored in localStorage, and users can perform CRUD (Create, Read, Update, Delete) operations on employees. 🌈
 
-### 🖥️ [Project Name 2]
+### 🖥️ ATM Simulation Web Application
 
-This is a simple web application that simulates basic ATM functionalities like balance inquiry, withdrawing funds, and depositing funds. It's built using HTML, CSS, and JavaScript.
-
-- **Features:** List out key features or functionalities.
-- **Screenshot:** (Add an image link if you have any.)
+- **Overview:** This is a simple web application that simulates basic ATM functionalities like balance inquiry, withdrawing funds, and depositing funds. It's built using **HTML**, **CSS**, and **JavaScript**.
+- **Features:**
+  - **Welcome Screen**: A prompt to "Insert Card" to start the ATM process.
+  - **PIN Entry**: Users can enter a simulated PIN code (currently "1234").
+  - **Main Menu**: Options for Balance Inquiry, Withdraw Funds, Deposit Funds, and Exit.
+  - **Balance Inquiry**: Displays the current balance.
+  - **Withdraw Funds**: Allows the user to withdraw money, ensuring they have sufficient funds.
+  - **Deposit Funds**: Allows the user to deposit money into the account.
+  - **Exit**: Ends the session and returns to the welcome screen.
+- **Screenshot:**
+  ![1729344459413](image/README/1729344459413.png)
 
 ## 📥 Installation
 
