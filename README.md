@@ -31,6 +31,9 @@ This repository showcases my progress and learning as a full stack web developme
 ### 📋 Employee Management Web Application
 
 In this project, I created a frontend-only Employee Management application that follows the MVC (Model-View-Controller) architecture. The data is stored in localStorage, and users can perform CRUD (Create, Read, Update, Delete) operations on employees. 🌈
+- **Screenshot:**
+![Screenshot 2024-10-19 163611](https://github.com/user-attachments/assets/5bb55bd1-c965-4d2a-9c0e-2336fdd2e980)
+
 
 ### 🖥️ ATM Simulation Web Application
 
