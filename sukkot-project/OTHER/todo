@@ -1,0 +1,27 @@
+
+לעשות עוד קטגוריות לתצוגה באתר 
+
+ **Single Movie Page**
+    - **Movie Details**: Display all information about a selected movie, including the list of actors.
+    - **Search by ID**: Add an input field that allows users to enter a movie ID and search for that specific movie.
+
+
+done:
+
+Display Popular Movies - done
+
+View Selection: Add a select input that allows users to choose between "Popular of the Week" or "Popular of the Day". - done
+
+About Page - done
+
+Search Page - done
+
+Navigation Bar - done
+
+Responsive Design - done/ish
+
+Favorites Page - done
+
+JavaScript Modules - done
+
+Rename and reorganise - done

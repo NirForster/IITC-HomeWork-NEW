@@ -1,9 +1,6 @@
 const questionsEL = document.querySelectorAll(".question");
-console.log(questionsEL);
 const answersEl = document.querySelectorAll(".answers");
-console.log(answersEl);
 const plusIconsEl = document.querySelectorAll(".plus-icon");
-console.log(plusIconsEl);
 
 questionsEL.forEach((question, index) => {
   question.addEventListener("click", () => {

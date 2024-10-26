@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
+:root {
+  --primary-color: #f5c518; /* Dark Gold */
+  --unused-color: #fddc5c; /* Light Gold */
+  --accent-color: #d62828; /* Crimson */
+  --background-color: #000000; /* Black */
+  --secondary-background-color: #323232; /* Lighter black */
+  --text-light: #ffffff; /* White */
+  --text-grey: #cccccc; /* White */
+  --text-dark: #000000; /* Black */
+}
+
+:root {
+  --text-padding: 12px;
+  --card-border-radius: 12px;
+  --h1-font-size: 4rem;
+  --h2-font-size: 2.8rem;
+  --h3-font-size: 2.4rem;
+}
+
+.about-us {
+  display: flex;
+  flex-direction: column;
+  font-family: "Varela Round", sans-serif;
+  padding: 16px;
+}
+
+section {
+  padding: 16px;
+  margin: 16px;
+  border: var(--accent-color) solid;
+  border-radius: var(--card-border-radius);
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+  padding-bottom: 8px;
+  padding: var(--text-padding);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  padding: var(--text-padding);
+}
+
+p {
+  font-size: var(--h3-font-size);
+  padding: var(--text-padding);
+  padding-bottom: 8px;
+  color: var(--text-grey);
+}

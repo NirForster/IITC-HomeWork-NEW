@@ -1,0 +1,191 @@
+:root {
+  --primary-color: #f5c518; /* Dark Gold */
+  --secondary-color: #333333; /* Dark Grey */
+  --accent-color: #d62828; /* Crimson */
+  --background-color: #000000; /* Light Grey */
+  --text-light: #ffffff; /* White */
+  --text-dark: #000000; /* Black */
+}
+
+:root {
+  --text-padding: 12px;
+  --card-border-radius: 12px;
+  --h1-font-size: 36px;
+  --h2-font-size: 24px;
+  --h3-font-size: 20px;
+}
+
+.oppenheimer-img-container {
+  position: relative;
+  background: #f5c518;
+  min-height: 45%;
+  max-height: 55%;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+  overflow: hidden;
+}
+
+.oppenheimer-img {
+  max-height: fit-content;
+  width: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Container for the search bar and button */
+.search-bar-container {
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.3);
+}
+
+/* Search bar styling */
+.search-bar {
+  width: 100%;
+  height: 4rem;
+  border: 0.4rem solid var(--accent-color);
+  border-right: 0;
+  border-radius: 2rem 0 0 2rem;
+  padding-left: 1.5rem;
+  font-size: 1.6rem;
+  background-color: var(--text-light);
+}
+
+.search-bar:hover {
+  background-color: rgb(242, 240, 240);
+}
+
+/* Search button inside the search bar */
+.search-button {
+  height: 4rem;
+  width: 12rem;
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--text-light);
+  border-radius: 0 2rem 2rem 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-button i {
+  font-size: 2rem;
+}
+
+/* Change button color on hover */
+.search-button:hover {
+  background-color: darkred;
+}
+
+/* results design */
+.results-message {
+  font-size: var(--h2-font-size);
+  color: var(--text-light);
+  padding: var(--text-padding);
+}
+
+.popular-movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.movie-card {
+  background-color: var(--primary-color);
+  border: solid 1px var(--text-dark);
+  border-radius: var(--card-border-radius);
+  text-align: center;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+}
+
+.movie-card h2 {
+  font-size: var(--h2-font-size);
+  margin: 10px 0;
+}
+
+.rating-favorits-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rating {
+  font-size: 24px;
+  padding: 12px;
+  margin: 4px;
+  color: var(--text-dark);
+}
+
+.flip-card {
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  margin: 4px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.inner {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.movie-card:hover .inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.front {
+  height: 100%;
+}
+
+/* Style the back side */
+.back {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie-description {
+  font-size: 20px;
+  overflow: auto;
+  overflow-y: auto scroll;
+  padding: 12px;
+  text-align: left;
+  color: var(--text-dark);
+}

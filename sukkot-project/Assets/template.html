@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMDB Mock</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- top navnar -->
+    <header>
+      <nav>
+        <label class="hamburger-menu">
+          <input type="checkbox" id="hamburger-toggle" />
+        </label>
+        <div class="logo">
+          <a href="../HomePage/index.html"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg"
+              alt="IMDB Logo"
+          /></a>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Sign Up</a></li>
+          <li>
+            <a href="#"><i class="fa-regular fa-heart"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <ul class="sidebar-links">
+        <div class="top-links">
+          <li>
+            <a href="../HomePage/index.html"
+              ><i class="fa-solid fa-house"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="../SearchPage/SearchPage.html"
+              ><i class="fas fa-search"></i> Search</a
+            >
+          </li>
+          <li>
+            <a href="../AboutUs/aboutUs.html"
+              ><i class="fa-solid fa-users"></i> About</a
+            >
+          </li>
+        </div>
+        <div class="bottom-links">
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-right-from-bracket"></i> Logout</a
+            >
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-address-card"></i> Contact</a>
+          </li>
+        </div>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      <div class="header-introduction">
+        <h1 class="welcome-header">Welcome to IMDB Mock!</h1>
+        <h3 class="featuring-header">Featuring Today's Most Popular</h3>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contacts</a></li>
+          <li>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- script to activate side bar -->
+    <script>
+      const hamburgerToggle = document.getElementById("hamburger-toggle");
+      const sidebar = document.getElementById("sidebar");
+      const mainEl = document.querySelector("main");
+
+      hamburgerToggle.addEventListener("change", () => {
+        sidebar.classList.toggle("active");
+        mainEl.classList.toggle("opacity");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMDB Mock</title>
+    <link rel="stylesheet" href="../CSS/main.css" />
+    <link rel="stylesheet" href="../CSS/homePage.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <label class="hamburger-menu">
+          <input type="checkbox" id="hamburger-toggle" />
+        </label>
+        <div class="logo">
+          <a href="../HTML/homePage.html"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg"
+              alt="IMDB Logo"
+          /></a>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Sign Up</a></li>
+          <li>
+            <a href="../HTML/FavoritesPage.html"
+              ><i class="fa-regular fa-heart"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <ul class="sidebar-links">
+        <div class="top-links">
+          <li>
+            <a href="../HTML/homePage.html"
+              ><i class="fa-solid fa-house"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="../HTML/SearchPage.html"
+              ><i class="fas fa-search"></i> Search</a
+            >
+          </li>
+          <li>
+            <a href="../HTML/aboutUs.html"
+              ><i class="fa-solid fa-users"></i> About</a
+            >
+          </li>
+        </div>
+        <div class="bottom-links">
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-right-from-bracket"></i> Logout</a
+            >
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-address-card"></i> Contact</a>
+          </li>
+        </div>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      <div class="header-introduction">
+        <h1 class="welcome-header">Welcome to IMDB Mock!</h1>
+        <div class="category-label">
+          <select name="categories" id="categories">
+            <option value="popular-this-week">This Week Most Popular</option>
+            <option value="popular-today">Today's Most Popular</option>
+          </select>
+        </div>
+      </div>
+      <div class="popular-movies-container"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contacts</a></li>
+          <li>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script>
+      const hamburgerToggle = document.getElementById("hamburger-toggle");
+      const sidebar = document.getElementById("sidebar");
+      const mainEl = document.querySelector("main");
+
+      hamburgerToggle.addEventListener("change", () => {
+        sidebar.classList.toggle("active");
+        mainEl.classList.toggle("opacity");
+      });
+    </script>
+    <!-- <script type="module" src="main.js"></script> -->
+    <script type="module" src="../SRC/main/home.js"></script>
+  </body>
+</html>

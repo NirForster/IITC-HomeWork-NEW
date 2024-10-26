@@ -1,0 +1,49 @@
+**Task Details**
+
+You are to create a movies website using the TMDB (The Movie Database) API. The website should be fully responsive and include the following features:
+
+1. **Home Page (Popular Movies)**
+
+   - **Display Popular Movies**: Show a list of popular movies on the home page.
+   - **View Selection**: Add a select input that allows users to choose between "Popular of the Week" or "Popular of the Day".
+
+2. **Single Movie Page**
+
+   - **Movie Details**: Display all information about a selected movie, including the list of actors.
+   - **Search by ID**: Add an input field that allows users to enter a movie ID and search for that specific movie.
+     לאפשר חיפוש ע"י ת"ז
+
+3. **About Page**
+   - **Website Information**: Create an "About" page that provides information about the website, its purpose, and any other relevant details.
+4. **Search Page**
+   - **Search Input**: Include a search field where users can input queries to search for movies.
+   - **Display Results**: Show all the results related to the user's query.
+5. **Favorites Page**
+   - **User Favorites**: Display a list of movies that the user has liked or marked as favorites.
+6. **Navigation Bar**
+   - **Site Navigation**: Include a navigation bar that allows users to navigate between the Home, About, Search, Favorites, and other relevant pages.
+
+**Design and Responsiveness**
+
+- **Responsive Design**: Ensure the website is fully responsive and provides a good user experience across various devices, including desktops, tablets, and mobile phones.
+
+**Design Inspiration**
+
+- **Dribbble**: Use Dribbble as inspiration for the website's UI/UX design.
+
+**Additional Notes**
+
+- **User-Friendly Design**: Make sure all pages are well-designed and user-friendly.
+- **JavaScript Modules**: Use JavaScript modules to organize your code (learn about them if you're not familiar).
+- **Error Handling**: Handle errors gracefully, such as displaying messages when no search results are found.
+
+---
+
+**Extra Features (Optional)**
+
+- **Pagination**: Implement pagination on the Home and Search pages to allow users to navigate through multiple pages of movies.
+
+<a href="/" class="page-icon">
+    <!-- Your page icon (either an image or icon font) -->
+    <img src="path-to-your-icon.png" alt="Home Icon">
+</a>

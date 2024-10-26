@@ -1,0 +1,122 @@
+:root {
+  --primary-color: #f5c518; /* Dark Gold */
+  --hover-color: #fddc5c; /* Light Gold */
+  --secondary-color: #333333; /* Dark Grey */
+  --accent-color: #d62828; /* Crimson */
+  --background-color: #000000; /* Light Grey */
+  --text-light: #ffffff; /* White */
+  --text-dark: #000000; /* Black */
+}
+
+:root {
+  --text-padding: 12px;
+  --card-border-radius: 12px;
+  --h1-font-size: 36px;
+  --h2-font-size: 24px;
+  --h3-font-size: 20px;
+}
+
+.header-introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: var(--text-padding);
+  margin: var(--text-padding);
+  font-size: var(--h3-font-size);
+}
+
+.favorite-movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-card {
+  background-color: var(--primary-color);
+  border: solid 1px var(--text-dark);
+  border-radius: var(--card-border-radius);
+  text-align: center;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+}
+
+.movie-card h2 {
+  font-size: var(--h2-font-size);
+  margin: 10px 0;
+}
+
+.rating-favorits-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rating {
+  font-size: 24px;
+  padding: 12px;
+  margin: 4px;
+  color: var(--text-dark);
+}
+
+.flip-card {
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  margin: 4px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.movie-card:hover .inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.front {
+  height: 100%;
+}
+
+.back {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie-description {
+  font-size: 20px;
+  overflow: auto;
+  overflow-y: auto scroll;
+  padding: 12px;
+  text-align: left;
+  color: var(--text-dark);
+}
