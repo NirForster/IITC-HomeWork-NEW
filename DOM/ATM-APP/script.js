@@ -17,7 +17,7 @@ const depositBtnEl = document.querySelector(".deposit-action-btn");
 const exitBtnsEl = document.querySelectorAll(".exit-action-btn");
 const confirmBtnsEl = document.querySelectorAll(".confirm-btn");
 
-// screen(container) elems:
+// screen (container) elems:
 const welcomeScreenEl = document.querySelector("#welcome-screen");
 const passwordScreenEl = document.querySelector("#password-screen");
 const actionsScreenEl = document.querySelector("#actions-screen");
@@ -40,7 +40,7 @@ submitPinEl.addEventListener("click", () => {
     actionsScreenEl.classList.remove("hidden");
     isMainScreenHidden = false;
   }
-  //   if PIN code is wrong
+  // if PIN code is wrong
   else {
     remainingTries--;
     triesSpanEl.innerText = remainingTries;
