@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IMDB Mock</title>
     <link rel="stylesheet" href="../CSS/main.css" />
+    <link rel="stylesheet" href="../CSS/SingleMoviePage.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
   <body>
-    <!-- top navnar -->
+    <!-- Top Navbar -->
     <header>
       <nav>
         <label class="hamburger-menu">
@@ -72,10 +73,30 @@
 
     <!-- Main Content -->
     <main>
-      <div class="header-introduction">
-        <h1 class="welcome-header">Welcome to IMDB Mock!</h1>
-        <h3 class="featuring-header">Featuring Today's Most Popular</h3>
-      </div>
+      <!-- Movie Data Section -->
+      <section class="movie-details">
+        <div class="movie-poster">
+          <img src="https://via.placeholder.com/300x450" alt="Movie Poster" />
+        </div>
+        <div class="movie-info">
+          <h2>Movie Title</h2>
+          <p><strong>Release Year:</strong> 2024</p>
+          <p><strong>Genre:</strong> Action, Adventure, Sci-Fi</p>
+          <p><strong>Rating:</strong> ⭐ 8.5/10</p>
+          <p>
+            <strong>Synopsis:</strong> Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante
+            dapibus diam.
+          </p>
+          <h3>Cast:</h3>
+          <ul>
+            <li>Actor 1</li>
+            <li>Actor 2</li>
+            <li>Actor 3</li>
+            <li>Actor 4</li>
+          </ul>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
@@ -97,7 +118,7 @@
       </div>
     </footer>
 
-    <!-- script to activate side bar -->
+    <!-- Script to activate sidebar -->
     <script>
       const hamburgerToggle = document.getElementById("hamburger-toggle");
       const sidebar = document.getElementById("sidebar");
@@ -108,5 +129,9 @@
         mainEl.classList.toggle("opacity");
       });
     </script>
+    <script
+      type="module"
+      src="../SRC/controllers/singleMovieController.js"
+    ></script>
   </body>
 </html>

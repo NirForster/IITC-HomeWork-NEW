@@ -23,11 +23,14 @@ const HomeView = {
                 </div>
                 <div class="movie-card back">
                     <p class="movie-description">${movie.overview}</p>
-                    <div class="rating-favorits-container">
-                      <p class="rating"><i class="fa-solid fa-star"></i> ${movie.vote_average}</p>
-                      <a href="#" class="favorite-btn" data-movie-id="${movie.id}">
-                        <i class="${isFavorite ? 'fa-solid fa-heart' : 'fa-regular fa-heart'}" data-movie-id="${movie.id}"></i>
-                      </a>
+                    <div class="rating-and-btns-container">
+                      <a href="../HTML/singleMoviePage.html?id=${movie.id}" class="watch-btn"><i class="fa-solid fa-film"></i>Watch</a>
+                      <div class="rating-favorits-container">
+                        <p class="rating"><i class="fa-solid fa-star"></i> ${movie.vote_average}</p>
+                        <a href="#" class="favorite-btn" data-movie-id="${movie.id}">
+                          <i class="${isFavorite ? 'fa-solid fa-heart' : 'fa-regular fa-heart'}" data-movie-id="${movie.id}"></i>
+                        </a>
+                    </div>
                     </div>
                 </div>
             </div>
