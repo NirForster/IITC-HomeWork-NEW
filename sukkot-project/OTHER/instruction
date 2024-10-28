@@ -42,8 +42,3 @@ You are to create a movies website using the TMDB (The Movie Database) API. The 
 **Extra Features (Optional)**
 
 - **Pagination**: Implement pagination on the Home and Search pages to allow users to navigate through multiple pages of movies.
-
-<a href="/" class="page-icon">
-    <!-- Your page icon (either an image or icon font) -->
-    <img src="path-to-your-icon.png" alt="Home Icon">
-</a>
