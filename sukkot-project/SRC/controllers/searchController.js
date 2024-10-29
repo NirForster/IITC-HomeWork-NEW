@@ -3,11 +3,12 @@ import FavoritesModel from "../models/favoritesModel.js";
 import SearchView from "../views/searchView.js";
 
 const SearchController = {
+  // search btn handler
   init: () => {
     const searchBtn = document.querySelector(".search-button");
     searchBtn.addEventListener("click", SearchController.handleSearch);
   },
-
+  // get search input value checck if its an id or name and fetch the movies that match
   handleSearch: async () => {
     const searchInput = document.querySelector(".search-bar").value.trim();
 

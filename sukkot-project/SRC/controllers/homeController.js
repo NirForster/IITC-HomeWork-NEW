@@ -1,6 +1,6 @@
 import MovieModel from "../models/movieModel.js";
 import FavoritesModel from "../models/favoritesModel.js";
-import HomeView from "../views/HomeView.js";
+import HomeView from "../views/homeView.js";
 
 const HomeController = {
   init: async () => {

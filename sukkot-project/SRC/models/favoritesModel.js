@@ -1,10 +1,13 @@
 const FavoritesModel = {
+  // get favorites from local storage
   getFavorites: () => JSON.parse(localStorage.getItem("favorites")) || [],
 
+  // save favorites to local storage
   saveFavorites: (favorites) => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   },
 
+  // toggle id's in and out of the favorites array
   toggleFavorite: (id) => {
     let favoritesArr = FavoritesModel.getFavorites();
 
@@ -24,14 +27,16 @@ const FavoritesModel = {
     return favoritesArr.includes(id);
   },
 
-  // handles toggling the favorite state and updating the icon class.
-  toggleIconClass: (iconElement, id) => {
-    const isNowFavorite = FavoritesModel.toggleFavorite(id);
+  // צריך לבדוק אם הפונקציה הזאת רלוונטית למשהו כי נראלי שלא חל בה שימוש
+  // בתכלס עדיף לייבא ולהשתמש בה בקונטרולר מאשר לשים בכל קונטרולר פונקציונלייות חדשה
+  // // handles toggling the favorite state and updating the icon class.
+  // toggleIconClass: (iconElement, id) => {
+  //   const isNowFavorite = FavoritesModel.toggleFavorite(id);
 
-    // atoggles the heart icon class based on the new favorite state
-    iconElement.classList.toggle("fa-solid", isNowFavorite.includes(id));
-    iconElement.classList.toggle("fa-regular", !isNowFavorite.includes(id));
-  },
+  //   // toggles the heart icon class based on the new favorite state
+  //   iconElement.classList.toggle("fa-solid", isNowFavorite.includes(id));
+  //   iconElement.classList.toggle("fa-regular", !isNowFavorite.includes(id));
+  // },
 };
 
 export default FavoritesModel;

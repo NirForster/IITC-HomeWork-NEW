@@ -5,7 +5,7 @@ const HomeView = {
     const containerEl = document.querySelector(".popular-movies-container");
     containerEl.innerHTML = ""; // clear previous content
 
-    const favoritesArr = FavoritesModel.getFavorites(); // get favorites from LS
+    const favoritesArr = FavoritesModel.getFavorites(); // get favorites from Local Storage
 
     movies.forEach((movie) => {
       const isFavorite = favoritesArr.includes(String(movie.id)); // check if movie was favorited
