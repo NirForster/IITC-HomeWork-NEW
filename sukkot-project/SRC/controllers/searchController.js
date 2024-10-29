@@ -3,15 +3,17 @@ import FavoritesModel from "../models/favoritesModel.js";
 import SearchView from "../views/searchView.js";
 
 const SearchController = {
-  // search btn handler
+  // function to initialise - sets an event listener to the search input
   init: () => {
     const searchBtn = document.querySelector(".search-button");
     searchBtn.addEventListener("click", SearchController.handleSearch);
   },
-  // get search input value checck if its an id or name and fetch the movies that match
+
   handleSearch: async () => {
+    // get search input value
     const searchInput = document.querySelector(".search-bar").value.trim();
 
+    // check if its an id or name and fetch the movies that match
     if (searchInput) {
       let movies;
       if (!isNaN(searchInput)) {
@@ -30,17 +32,19 @@ const SearchController = {
     // click event listeners for heart icons
     document.querySelectorAll(".favorite-btn i").forEach((heartIcon) => {
       heartIcon.addEventListener("click", (event) => {
-        event.preventDefault(); // prevent default behavior from <a>
-        const movieId = event.target.getAttribute("data-movie-id");
+        event.preventDefault(); //bc its <a> elem so prvnt defu
+        const movieId = event.target.getAttribute("data-movie-id"); //get the data attribute(id)
 
-        // toggle the favorite status
+        // returns the updated favorites array
         const updatedFavorites = FavoritesModel.toggleFavorite(movieId);
 
-        // update heart icon class based on favorite status
+        // update the heart icon's class
         if (updatedFavorites.includes(movieId)) {
+          // if movie(id) in the list:
           event.target.classList.remove("fa-regular");
           event.target.classList.add("fa-solid");
         } else {
+          // if movie(id) isnt on the list:
           event.target.classList.remove("fa-solid");
           event.target.classList.add("fa-regular");
         }

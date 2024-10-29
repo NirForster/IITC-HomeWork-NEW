@@ -16,9 +16,8 @@ const HomeController = {
       .addEventListener("change", async (event) => {
         const period = event.target.value === "popular-today" ? "day" : "week";
 
-        // adding visul feedback for category change(flash)
         const container = document.querySelector(".popular-movies-container");
-        container.classList.add("flash");
+        container.classList.add("flash"); // adding visul feedback for category change(flash)
 
         // get new movies based on selected period(week/day)
         const movies = await MovieModel.fetchTrendingMovies(period);
@@ -30,7 +29,7 @@ const HomeController = {
         }, 500);
       });
 
-    // Attach heart icon listeners
+    // Attach heart icon event listeners
     HomeController.attachFavoriteListeners();
   },
 
@@ -38,17 +37,19 @@ const HomeController = {
     // click event listeners for heart icons
     document.querySelectorAll(".favorite-btn i").forEach((heartIcon) => {
       heartIcon.addEventListener("click", (event) => {
-        event.preventDefault();
-        const movieId = event.target.getAttribute("data-movie-id");
+        event.preventDefault(); //bc its <a> elem so prvnt defu
+        const movieId = event.target.getAttribute("data-movie-id"); //get the data attribute(id)
 
-        // toggle the favorite status
+        // returns the updated favorites array
         const updatedFavorites = FavoritesModel.toggleFavorite(movieId);
 
-        // update heart icon class based on favorite status
+        // update the heart icon's class
         if (updatedFavorites.includes(movieId)) {
+          // if movie(id) in the list:
           event.target.classList.remove("fa-regular");
           event.target.classList.add("fa-solid");
         } else {
+          // if movie(id) isnt on the list:
           event.target.classList.remove("fa-solid");
           event.target.classList.add("fa-regular");
         }

@@ -5,9 +5,7 @@ const BASE_URL = "https://api.themoviedb.org/3";
 const MovieModel = {
   // Fetch movies by name
   fetchMoviesByName: async (query) => {
-    const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(
-      query
-    )}`;
+    const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}`; //prettier-ignore
     const response = await fetch(url);
 
     if (!response.ok) {
