@@ -7,12 +7,15 @@
   --text-dark: #000000; /* Black */
 }
 
+/* main root */
 :root {
   --text-padding: 12px;
   --card-border-radius: 12px;
   --h1-font-size: 36px;
   --h2-font-size: 24px;
   --h3-font-size: 20px;
+  --Rubik: "Rubik", sans-serif;
+  --Roboto: "Roboto Condensed", sans-serif;
 }
 
 .header-introduction {

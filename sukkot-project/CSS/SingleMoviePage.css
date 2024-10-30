@@ -3,7 +3,6 @@
 /* color root */
 :root {
   --primary-color: #f5c518; /* Dark Gold */
-  /* --unused-color: #fddc5c; Light Gold */
   --accent-color: #d62828; /* Crimson */
   --background-color: #000000; /* Black */
   --secondary-background-color: #323232; /* Lighter black */
@@ -26,6 +25,8 @@
   --h1-font-size: 36px;
   --h2-font-size: 24px;
   --h3-font-size: 20px;
+  --Rubik: "Rubik", sans-serif;
+  --Roboto: "Roboto Condensed", sans-serif;
 }
 
 /* Container for the movie details section */
