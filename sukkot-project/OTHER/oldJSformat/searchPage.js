@@ -1,4 +1,4 @@
-import { API_KEY } from "../Assets/API_KEYS.js";
+import { API_KEY } from "../../Assets/API_KEYS.js";
 
 const EndpointSearchByName = "https://api.themoviedb.org/3/search/movie";
 const EndpointSearchByID = "https://api.themoviedb.org/3/movie";

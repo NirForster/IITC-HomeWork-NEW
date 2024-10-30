@@ -1,10 +1,10 @@
+add categories for display
 
-לעשות עוד קטגוריות לתצוגה באתר 
+add carosle for new categories
 
- **Single Movie Page**
-    - **Movie Details**: Display all information about a selected movie, including the list of actors.
-    - **Search by ID**: Add an input field that allows users to enter a movie ID and search for that specific movie.
+add log in log out functionallity
 
+add contact page
 
 done:
 
@@ -25,3 +25,5 @@ Favorites Page - done
 JavaScript Modules - done
 
 Rename and reorganise - done
+
+Single Movie Page - done
