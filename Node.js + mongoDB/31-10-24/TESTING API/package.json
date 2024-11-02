@@ -1,5 +1,5 @@
 {
-  "name": "testing-api",
+  "name": "28-10-24",
   "version": "1.0.0",
   "main": "app.js",
   "type": "module",
@@ -14,7 +14,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "mongoose": "^8.8.0",
+    "mongoose": "^8.7.3",
     "morgan": "^1.10.0"
   }
 }
