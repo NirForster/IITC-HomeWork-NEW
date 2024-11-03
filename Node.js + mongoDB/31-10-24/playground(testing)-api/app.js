@@ -1,17 +1,16 @@
-// import fs from "fs/promises";
-// import authUser from './middleware/auth.js'
 import express from "express";
-import morgan from "morgan";
-import logRequest from "./middleware/logger.js";
-import dotenv from "dotenv";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+import morgan from "morgan";
 
 // Routes Import
-import router from "./routes/jokesRoute.js";
+import jokesRoutes from "./routes/jokes.js";
+import usersRoutes from "./routes/users.js";
+import productsRoutes from "./routes/products.js";
 
-const app = express();
-const PORT = 3000;
 dotenv.config();
+const app = express();
+app.use(express.json());
 
 console.log("Hello", process.env.USER);
 
@@ -24,11 +23,13 @@ mongoose.connect(URI).then(() => {
 });
 
 // Middleware
-app.use(express.json());
 app.use(morgan("tiny"));
-app.use(logRequest);
 
-app.use("/api/jokes", router);
+app.use("/jokes", jokesRoutes);
+app.use("/users", usersRoutes);
+app.use("/products", productsRoutes);
+
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

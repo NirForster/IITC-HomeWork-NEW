@@ -1,18 +1,18 @@
 import mongoose from "mongoose";
 
 const jokeSchema = new mongoose.Schema({
-  setup: {
+  content: {
     type: String,
     required: true,
   },
-  punchline: {
+  category: {
     type: String,
-    required: true,
+    enum: ["Pun", "Dad Joke", "Knock-Knock"],
   },
   createdAt: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
 });
 
-export default mongoose.model("joke", jokeSchema);
+export default mongoose.model("Joke", jokeSchema);
