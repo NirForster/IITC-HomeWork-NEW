@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import styles from "./Singlepokemon.module.css";
 import axios from "axios";
 
 const Singlepokemon = ({ name, url }) => {
@@ -21,7 +20,7 @@ const Singlepokemon = ({ name, url }) => {
 
   return (
     pokemon && (
-      <div className={styles.container}>
+      <div>
         <h1>{name}</h1>
         <img
           src={pokemon.sprites.front_default}
@@ -29,10 +28,10 @@ const Singlepokemon = ({ name, url }) => {
           style={{ width: "150px", height: "150px" }}
         />
         <div>
-          <h2>Abilties</h2>
+          <h2>Type</h2>
           <ul>
-            {pokemon.abilities.map(({ ability }) => (
-              <li key={ability.name}>{ability.name}</li>
+            {pokemon.types.map(({ type }) => (
+              <li key={type.name}>{type.name}</li>
             ))}
           </ul>
         </div>

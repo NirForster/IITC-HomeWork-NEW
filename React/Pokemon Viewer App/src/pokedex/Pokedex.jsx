@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Singlepokemon from "../Singlepokemon/Singlepokemon";
+import PokeInfo from "../PokeInfo/PokeInfo";
 
 const Pokedex = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -21,16 +22,15 @@ const Pokedex = () => {
   }, []);
 
   return (
-    <div>
-      <ul>
-        {pokemons.map((pokemon) => {
-          return (
-            <li key={pokemon.name}>
-              <Singlepokemon name={pokemon.name} url={pokemon.url} />
-            </li>
-          );
-        })}
-      </ul>
+    <div className="cardContainer">
+      {pokemons.map((pokemon) => {
+        return (
+          <div className="card" key={pokemon.name}>
+            <PokeInfo name={pokemon.name} url={pokemon.url} />
+            <Singlepokemon name={pokemon.name} url={pokemon.url} />
+          </div>
+        );
+      })}
     </div>
   );
 };
