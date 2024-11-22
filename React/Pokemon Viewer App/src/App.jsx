@@ -3,14 +3,17 @@ import "./App.css";
 import Pokedex from "./pokedex/pokedex";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [isVisible, setisVisible] = useState(false);
 
   return (
     <>
       <div className="body">
-        <div className="CardsContainer">
-          <Pokedex />
-        </div>
+        {!isVisible && (
+          <button onClick={() => setisVisible(!isVisible)}>
+            click to enter
+          </button>
+        )}
+        {isVisible && <Pokedex />}
       </div>
     </>
   );
