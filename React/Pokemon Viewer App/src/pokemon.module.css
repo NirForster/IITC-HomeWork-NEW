@@ -1,0 +1,110 @@
+:root {
+  --Fire-type-color: #ee8130;
+  --Water-type-color: #6390f0;
+  --Grass-type-color: #7ac74c;
+  --Electric-type-color: #f7d02c;
+  --Ice-type-color: #96d9d6;
+  --Fighting-type-color: #c22e28;
+  --Poison-type-color: #a33ea1;
+  --Ground-type-color: #e2bf65;
+  --Flying-type-color: #a98ff3;
+  --Psychic-type-color: #f95587;
+  --Bug-type-color: #a6b91a;
+  --Rock-type-color: #b6a136;
+  --Ghost-type-color: #735797;
+  --Dragon-type-color: #6f35fc;
+  --Dark-type-color: #705746;
+  --Steel-type-color: #b7b7ce;
+  --Fairy-type-color: #d685ad;
+  --Normal-type-color: #a8a77a;
+}
+
+.fire {
+  background-color: var(--Fire-type-color);
+  color: white; /* Adjust text for contrast */
+}
+
+.water {
+  background-color: var(--Water-type-color);
+  color: white;
+}
+
+.grass {
+  background-color: var(--Grass-type-color);
+  color: white;
+}
+
+.electric {
+  background-color: var(--Electric-type-color);
+  color: black; /* High contrast for yellow */
+}
+
+.ice {
+  background-color: var(--Ice-type-color);
+  color: black;
+}
+
+.fighting {
+  background-color: var(--Fighting-type-color);
+  color: white;
+}
+
+.poison {
+  background-color: var(--Poison-type-color);
+  color: white;
+}
+
+.ground {
+  background-color: var(--Ground-type-color);
+  color: black;
+}
+
+.flying {
+  background-color: var(--Flying-type-color);
+  color: black;
+}
+
+.psychic {
+  background-color: var(--Psychic-type-color);
+  color: white;
+}
+
+.bug {
+  background-color: var(--Bug-type-color);
+  color: black;
+}
+
+.rock {
+  background-color: var(--Rock-type-color);
+  color: white;
+}
+
+.ghost {
+  background-color: var(--Ghost-type-color);
+  color: white;
+}
+
+.dragon {
+  background-color: var(--Dragon-type-color);
+  color: white;
+}
+
+.dark {
+  background-color: var(--Dark-type-color);
+  color: white;
+}
+
+.steel {
+  background-color: var(--Steel-type-color);
+  color: black;
+}
+
+.fairy {
+  background-color: var(--Fairy-type-color);
+  color: black;
+}
+
+.normal {
+  background-color: var(--Normal-type-color);
+  color: black;
+}

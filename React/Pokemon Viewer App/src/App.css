@@ -2,25 +2,39 @@
 
 :root {
   --font-family: "Poppins", sans-serif;
-  --card-bg-color: #f7f9fc;
-  --card-hover-bg-color: #dbe7f3;
-  --text-primary: #333;
-  --text-secondary: #555;
-  --text-third: #666;
-  --img-border-color: #ddd;
-  --list-bg-color: #f0f4f8;
+  --background-color: rgb(241, 241, 241); /* very light blue */
+  --Fire-type-color: #ee8130;
+  --Grass-type-color: #7ac74c;
+  --Water-type-color: #6390f0;
 }
 
 .body {
   margin: 0;
+  padding: 24px;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
 }
 
-.cardContainer {
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+#page-header {
+  text-align: start;
+  font-size: 36px;
+  padding-left: 70px;
+}
+
+.cardsContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 20px;
-  gap: 20px 20px;
-  font-family: "Poppins";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  background-color: var(--background-color);
+  border-radius: 16px;
 }
 
 .card {
@@ -30,12 +44,15 @@
   justify-content: center;
   background-color: #f7f9fc; /* Light background for the card */
   border-radius: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
-  padding: 20px;
-  width: 80%;
+  box-shadow: -6px 6px 10px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
+  width: 100%;
   /* max-width: 300px; */
-  margin: 20px auto;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: var(--font-family);
+}
+
+.card > * {
+  width: 80%; /* Ensure child elements expand fully */
 }
 
 .card:hover {
@@ -52,12 +69,38 @@ h1 {
   text-align: center;
 }
 
+.pokeball {
+  background-image: url("https://i.ebayimg.com/images/g/0p4AAOSw6wNkXU4a/s-l1200.jpg");
+  background-size: cover; /* Make the image cover the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating */
+  border-radius: 50%;
+  min-width: 150px;
+  min-height: 150px;
+  max-width: 200px;
+  max-height: 200px;
+}
+
 img {
-  border-radius: 50%; /* Circular image */
-  background-color: #fff; /* White background for the image */
   padding: 10px;
   border: 2px solid #ddd;
   margin: 15px 0;
+  min-width: 150px;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.static-pokemon-image {
+  border-radius: 50%; /* Circular image */
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZGkgLSu1iky-sGBmiN6eOxeS3--fsPOCq9w&s"); /* White background for the image */
+  background-size: cover; /* Make the image cover the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating */
+  background-size: 150%;
+}
+
+.pokemon-gif {
+  border: none;
 }
 
 div h2 {
@@ -75,7 +118,7 @@ ul {
 li {
   font-size: 16px;
   color: #666;
-  padding: 5px 10px;
+  padding: 12px;
   background-color: #f0f4f8;
   margin: 5px 0;
   border-radius: 10px;
@@ -87,10 +130,75 @@ li:hover {
   background-color: #dbe7f3; /* Highlight effect */
 }
 
-.pokeInfoBody {
-  border: blue 1px solid;
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  width: 100%;
+  height: 100%;
+  margin: 80px;
+  border-radius: 10px;
+  text-align: center;
+  color: black;
+  font-family: var(--font-family);
 }
 
-.infoContainer {
-  border: 1px solid blue;
+.infoContainer > * {
+  width: 80%; /* Ensure child elements expand fully */
+}
+
+/* Fullscreen styling */
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  color: white; /* Default text color */
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background: darkred;
+}
+
+@media (max-width: 1200px) {
+  .cardsContainer {
+    grid-template-columns: 1fr 1fr; /* Stack cards vertically */
+  }
+}
+
+@media (max-width: 850px) {
+  .cardsContainer {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+  }
+}
+
+@media (max-width: 450px) {
+  .body {
+    padding: 0;
+  }
+  .card {
+    padding: 0;
+  }
 }

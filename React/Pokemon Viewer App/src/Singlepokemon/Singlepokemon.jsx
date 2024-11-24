@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import styles from "../pokemon.module.css";
 
-const Singlepokemon = ({ name, url }) => {
+const Singlepokemon = ({ name, url, onClick }) => {
   const [pokemon, setPokemon] = useState(null);
 
   const fetchData = async () => {
     try {
       const { data } = await axios.get(url);
       setPokemon(data);
-      console.log(data);
     } catch (error) {
       console.error(error);
     }
@@ -20,13 +20,19 @@ const Singlepokemon = ({ name, url }) => {
 
   return (
     pokemon && (
-      <div>
+      <button
+        onClick={onClick}
+        className={`card ${styles[pokemon.types[0].type.name]}`}
+        key={pokemon.name}
+      >
         <h1>{name}</h1>
-        <img
-          src={pokemon.sprites.front_default}
-          alt={name}
-          style={{ width: "150px", height: "150px" }}
-        />
+        <div className="pokeball">
+          <img
+            src={pokemon.sprites.front_default}
+            alt={name}
+            className="static-pokemon-image"
+          />
+        </div>
         <div>
           <h2>Type</h2>
           <ul>
@@ -35,7 +41,7 @@ const Singlepokemon = ({ name, url }) => {
             ))}
           </ul>
         </div>
-      </div>
+      </button>
     )
   );
 };
