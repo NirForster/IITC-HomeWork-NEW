@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styles from "../pokemon.module.css";
+import { useParams, useNavigate } from "react-router-dom";
+import styles from "../CSS/pokemon.module.css";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
-const PokeInfo = ({ name, url }) => {
+const PokeInfo = () => {
+  const { name } = useParams(); // Get the Pokémon name from URL
   const [pokemon, setPokemon] = useState(null);
-  const [value, setValue] = useState("1"); // State to control active tab
+  const [value, setValue] = useState("1");
+  const navigate = useNavigate(); // Hook for navigation
 
   const fetchData = async () => {
     try {
-      const { data } = await axios.get(url);
+      const { data } = await axios.get(
+        `https://pokeapi.co/api/v2/pokemon/${name}`
+      );
       setPokemon(data);
     } catch (error) {
       console.error(error);
@@ -21,22 +28,24 @@ const PokeInfo = ({ name, url }) => {
   };
 
   useEffect(() => {
-    if (url) {
-      console.log(`Fetching data for ${name}`);
-      fetchData();
-    }
-  }, [url]); // Include 'url' as a dependency
+    fetchData();
+  }, [name]);
 
   const handleChange = (event, newValue) => {
-    setValue(newValue); // Update active tab
+    setValue(newValue);
   };
 
   return (
     pokemon && (
-      <div
-        className={`infoContainer ${styles[pokemon.types[0].type.name]}
-      `}
-      >
+      <div className={`infoContainer ${styles[pokemon.types[0].type.name]}`}>
+        {/* Back Arrow Button */}
+        <IconButton
+          color="primary"
+          onClick={() => navigate("/")}
+          style={{ position: "absolute", top: "20px", left: "20px" }}
+        >
+          <ArrowBackIcon style={{ fontSize: "40px" }} />
+        </IconButton>
         <h1>{name}</h1>
         <img
           src={
@@ -46,7 +55,6 @@ const PokeInfo = ({ name, url }) => {
           alt={name}
           className="pokemon-gif"
         />
-        {/* Material-UI Tabs */}
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
             <TabList onChange={handleChange} aria-label="Pokemon Details Tabs">
@@ -55,7 +63,6 @@ const PokeInfo = ({ name, url }) => {
               <Tab label="Stats" value="3" />
             </TabList>
           </Box>
-          {/* Tab Panels */}
           <TabPanel value="1">
             <li>WEIGHT: {pokemon.weight}</li>
             <li>HEIGHT: {pokemon.height}</li>

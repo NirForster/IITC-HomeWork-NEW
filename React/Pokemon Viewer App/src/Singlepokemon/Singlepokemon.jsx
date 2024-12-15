@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styles from "../pokemon.module.css";
+import styles from "../CSS/pokemon.module.css";
 
 const Singlepokemon = ({ name, url, onClick }) => {
   const [pokemon, setPokemon] = useState(null);
