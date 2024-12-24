@@ -15,6 +15,10 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
+// Routes
+app.use("/auth", require("./routes/authRoutes"));
+app.use("/businesses", require("./routes/businessRoutes"));
+
 app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${process.env.PORT}`);
 });
