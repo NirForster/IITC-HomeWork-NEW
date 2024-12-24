@@ -1,7 +1,10 @@
 const jwt = require("jsonwebtoken");
 
 const verifyToken = (req, res, next) => {
-  const token = req.header("Authorization");
+  const authHeader = req.header("Authorization");
+  if (!authHeader) return res.status(401).json({ message: "Access denied" });
+
+  const token = authHeader.split(" ")[1]; // Extract the token after 'Bearer'
   if (!token) return res.status(401).json({ message: "Access denied" });
 
   try {

@@ -5,7 +5,7 @@ const { verifyToken } = require("../middleware/authMiddleware");
 const router = express.Router();
 
 router.get("/", businessController.getAllBusinesses);
-router.post("/", verifyToken, businessController.createBusiness);
+router.post("/create", verifyToken, businessController.createBusiness);
 router.put("/:id", verifyToken, businessController.updateBusiness);
 router.delete("/:id", verifyToken, businessController.deleteBusiness);
 
