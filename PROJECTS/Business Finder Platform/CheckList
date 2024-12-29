@@ -1,17 +1,38 @@
 **\***must\*\*\*\*
-#subscription management:
-edit user subscription plan
 #Account Page:
 display and edit users own businesses + add statistics (how many saved how many subscribed, reviews?)
 display saved businesess
 add new business - just change the select category to free input
 
-**\***want to\*\*\*\*
+#Notifications:
+Users can subscribe to a business to receive notifications when:
+The owner updates the business.
+The owner deletes the business.
+
 #implement Searches:
-search by category and free search.
+Allow users to filter businesses by:
+Name (partial match).
+Description (partial match).
+search by category.
+
+#reviews:
+Display all reviews under the business details page.
+
+**\***want to\*\*\*\*
+#plan management:
+edit user subscription plan
 
 **\***if there is time\*\*\*\*
 #featuers for the future:
 integrate Google and apple
 add dark mode
 add name next to avatar
+
+Bonus Requirements:
+Plan Upgrading:
+Allow users to upgrade their plans.
+Enforce business limits based on the new plan after the upgrade.
+Real-Time Notifications:
+Use WebSockets or similar technology to implement real-time notifications for subscribed users.
+Admin Role:
+Add an admin user role with the ability to moderate reviews and manage businesses.
