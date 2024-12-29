@@ -1,17 +1,20 @@
-const jwt = require("jsonwebtoken");
-
 const verifyToken = (req, res, next) => {
-  const authHeader = req.header("Authorization");
-  if (!authHeader) return res.status(401).json({ message: "Access denied" });
+  console.log("Cookies received in request:", req.cookies); // Log cookies
 
-  const token = authHeader.split(" ")[1]; // Extract the token after 'Bearer'
-  if (!token) return res.status(401).json({ message: "Access denied" });
+  const token = req.cookies.authToken; // Extract token from cookies
+  if (!token) {
+    console.log("No token found in cookies"); // Log missing token
+    return res.status(401).json({ message: "Access denied" });
+  }
 
   try {
-    const verified = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = verified;
+    console.log("Token to verify:", token); // Log token being verified
+    const verified = jwt.verify(token, process.env.JWT_SECRET); // Verify token
+    console.log("Verified user from token:", verified); // Log decoded token data
+    req.user = verified; // Attach user info to the request
     next();
   } catch (err) {
+    console.error("Token verification failed:", err); // Log error details
     res.status(400).json({ message: "Invalid token" });
   }
 };

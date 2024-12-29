@@ -4,9 +4,15 @@ const { verifyToken } = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
+// routes for businesses
 router.get("/", businessController.getAllBusinesses);
+router.get("/:id", businessController.getBusinessById);
 router.post("/create", verifyToken, businessController.createBusiness);
 router.put("/:id", verifyToken, businessController.updateBusiness);
 router.delete("/:id", verifyToken, businessController.deleteBusiness);
+
+// routes for comments
+router.post("/comment", verifyToken, businessController.addComment);
+router.get("/:id/all-comments", businessController.getComments);
 
 module.exports = router;

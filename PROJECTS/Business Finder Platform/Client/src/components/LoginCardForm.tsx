@@ -26,9 +26,11 @@ export function LoginCardWithForm() {
     e.preventDefault();
     try {
       const userData = await loginService({ email, password });
-      login(userData); // Update the context with the authenticated user
+      console.log("Login response:", userData); // Debug the response
+      login(); // Update the context with the authenticated user
       navigate("/"); // Redirect to home page
     } catch (err) {
+      console.error("Login error:", err); // Log the error
       setError("Invalid email or password. Please try again.");
     }
   };

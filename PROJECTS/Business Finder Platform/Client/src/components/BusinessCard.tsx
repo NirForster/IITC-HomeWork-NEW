@@ -1,7 +1,18 @@
 import * as React from "react";
 import { Card, CardContent } from "./ui/card";
-import api from "../services/api"; // Importing the API
+import api from "../services/api"; // Axios instance
 import { Button } from "./ui/button";
+import { useAuth } from "../context/AuthContext";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "./ui/dialog";
+import { Textarea } from "./ui/textarea";
 
 interface Business {
   name: string;
@@ -10,14 +21,26 @@ interface Business {
   _id: string;
 }
 
+interface Comment {
+  userId: { name: string };
+  comment: string;
+  createdAt: string;
+}
+
 const BusinessCard = () => {
   const [businesses, setBusinesses] = React.useState<Business[]>([]);
+  const [savedBusinesses, setSavedBusinesses] = React.useState<string[]>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
   const [error, setError] = React.useState<string | null>(null);
+  const [currentBusiness, setCurrentBusiness] = React.useState<Business | null>(
+    null
+  );
+  const [comments, setComments] = React.useState<Comment[]>([]);
+  const [newComment, setNewComment] = React.useState<string>("");
+  const { user } = useAuth();
 
-  // Fetch businesses on component mount
   React.useEffect(() => {
-    async function fetchBusinesses() {
+    const fetchBusinesses = async () => {
       try {
         const response = await api.get("/businesses");
         setBusinesses(response.data);
@@ -26,10 +49,65 @@ const BusinessCard = () => {
       } finally {
         setLoading(false);
       }
-    }
+    };
+
+    const fetchSavedBusinesses = async () => {
+      if (user) {
+        try {
+          const response = await api.get("/users/saved-businesses");
+          setSavedBusinesses(
+            response.data.map((business: Business) => business._id)
+          );
+        } catch (err) {
+          console.error("Failed to load saved businesses:", err);
+        }
+      }
+    };
 
     fetchBusinesses();
-  }, []);
+    fetchSavedBusinesses();
+  }, [user]);
+
+  const handleSaveBusiness = async (businessId: string) => {
+    try {
+      await api.post("/users/save-business", { businessId });
+      setSavedBusinesses((prev) => [...prev, businessId]);
+    } catch (err) {
+      console.error("Failed to save business:", err);
+    }
+  };
+
+  const handleUnsaveBusiness = async (businessId: string) => {
+    try {
+      await api.delete("/users/save-business", { data: { businessId } });
+      setSavedBusinesses((prev) => prev.filter((id) => id !== businessId));
+    } catch (err) {
+      console.error("Failed to unsave business:", err);
+    }
+  };
+
+  const fetchComments = async (businessId: string) => {
+    try {
+      const response = await api.get(`/businesses/${businessId}/comments`);
+      setComments(response.data);
+    } catch (err) {
+      console.error("Failed to fetch comments:", err);
+    }
+  };
+
+  const handleAddComment = async () => {
+    if (!newComment.trim()) return;
+    try {
+      const response = await api.post("/businesses/comment", {
+        businessId: currentBusiness?._id,
+        comment: newComment,
+      });
+      setComments(response.data.reviews);
+      setNewComment("");
+    } catch (err) {
+      console.error("Failed to add comment:", err);
+    }
+  };
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
@@ -47,12 +125,64 @@ const BusinessCard = () => {
 
             {/* Buttons Container */}
             <div className="flex justify-between mt-4">
-              <Button>
-                <i className="fa fa-message"></i>
-              </Button>
-              <Button>
-                <i className="fa fa-heart"></i>
-              </Button>
+              {savedBusinesses.includes(business._id) ? (
+                <Button
+                  variant="outline"
+                  onClick={() => handleUnsaveBusiness(business._id)}
+                >
+                  <i className="fa fa-heart text-red-500"></i> Unsave
+                </Button>
+              ) : (
+                <Button
+                  variant="outline"
+                  onClick={() => handleSaveBusiness(business._id)}
+                >
+                  <i className="fa fa-heart"></i> Save
+                </Button>
+              )}
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      setCurrentBusiness(business);
+                      fetchComments(business._id);
+                    }}
+                  >
+                    <i className="fa fa-message"></i> Review
+                  </Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Reviews for {business.name}</DialogTitle>
+                    <DialogDescription>
+                      Read and add Reviews below.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="space-y-4">
+                    {comments.map((comment, idx) => (
+                      <div key={idx} className="border-b pb-2">
+                        <p className="text-sm text-gray-600">
+                          {comment.userId.name} -{" "}
+                          {new Date(comment.createdAt).toLocaleString()}
+                        </p>
+                        <p className="text-gray-800">{comment.comment}</p>
+                      </div>
+                    ))}
+                    <Textarea
+                      placeholder="Write your comment..."
+                      value={newComment}
+                      onChange={(e) => setNewComment(e.target.value)}
+                    />
+                  </div>
+                  <DialogFooter>
+                    <Button variant="outline" onClick={() => setNewComment("")}>
+                      Cancel
+                    </Button>
+                    <Button onClick={handleAddComment}>Add Review</Button>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
             </div>
           </CardContent>
         </Card>
