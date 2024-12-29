@@ -1,4 +1,17 @@
-login, check
-signup, check integrate Google and apple
-business CRUD,
-subscription management.
+**\***must\*\*\*\*
+#subscription management:
+edit user subscription plan
+#Account Page:
+display and edit users own businesses + add statistics (how many saved how many subscribed, reviews?)
+display saved businesess
+add new business - just change the select category to free input
+
+**\***want to\*\*\*\*
+#implement Searches:
+search by category and free search.
+
+**\***if there is time\*\*\*\*
+#featuers for the future:
+integrate Google and apple
+add dark mode
+add name next to avatar

@@ -117,6 +117,70 @@ const businessController = {
       res.status(500).json({ error: err.message });
     }
   },
+
+  subscribeToBusiness: async (req, res) => {
+    try {
+      const { businessId } = req.body;
+      const userId = req.user.id;
+
+      const business = await Business.findById(businessId);
+      if (!business)
+        return res.status(404).json({ message: "Business not found" });
+
+      if (business.subscribers.includes(userId)) {
+        return res.status(400).json({ message: "Already subscribed" });
+      }
+
+      business.subscribers.push(userId);
+      await business.save();
+
+      res.status(200).json({ message: "Subscribed successfully", business });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: err.message });
+    }
+  },
+
+  unsubscribeFromBusiness: async (req, res) => {
+    try {
+      const { businessId } = req.body;
+      const userId = req.user.id;
+
+      const business = await Business.findById(businessId);
+      if (!business)
+        return res.status(404).json({ message: "Business not found" });
+
+      if (!business.subscribers.includes(userId)) {
+        return res.status(400).json({ message: "Not subscribed" });
+      }
+
+      business.subscribers = business.subscribers.filter(
+        (subscriberId) => subscriberId.toString() !== userId
+      );
+      await business.save();
+
+      res.status(200).json({ message: "Unsubscribed successfully", business });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: err.message });
+    }
+  },
+
+  getSubscribers: async (req, res) => {
+    try {
+      const business = await Business.findById(req.params.id).populate(
+        "subscribers",
+        "name email"
+      );
+      if (!business)
+        return res.status(404).json({ message: "Business not found" });
+
+      res.status(200).json(business.subscribers);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: err.message });
+    }
+  },
 };
 
 module.exports = businessController;

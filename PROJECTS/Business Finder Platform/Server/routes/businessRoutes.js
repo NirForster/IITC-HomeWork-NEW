@@ -15,4 +15,13 @@ router.delete("/:id", verifyToken, businessController.deleteBusiness);
 router.post("/comment", verifyToken, businessController.addComment);
 router.get("/:id/all-comments", businessController.getComments);
 
+// subscription:
+router.post("/subscribe", verifyToken, businessController.subscribeToBusiness);
+router.post(
+  "/unsubscribe",
+  verifyToken,
+  businessController.unsubscribeFromBusiness
+);
+router.get("/subscribers/:id", verifyToken, businessController.getSubscribers);
+
 module.exports = router;

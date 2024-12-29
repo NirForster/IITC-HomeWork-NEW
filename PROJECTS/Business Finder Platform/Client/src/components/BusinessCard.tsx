@@ -30,6 +30,9 @@ interface Comment {
 const BusinessCard = () => {
   const [businesses, setBusinesses] = React.useState<Business[]>([]);
   const [savedBusinesses, setSavedBusinesses] = React.useState<string[]>([]);
+  const [subscribedBusinesses, setSubscribedBusinesses] = React.useState<
+    string[]
+  >([]);
   const [loading, setLoading] = React.useState<boolean>(true);
   const [error, setError] = React.useState<string | null>(null);
   const [currentBusiness, setCurrentBusiness] = React.useState<Business | null>(
@@ -64,8 +67,22 @@ const BusinessCard = () => {
       }
     };
 
+    const fetchSubscribedBusinesses = async () => {
+      if (user) {
+        try {
+          const response = await api.get("/users/subscribed-businesses");
+          setSubscribedBusinesses(
+            response.data.map((business: Business) => business._id)
+          );
+        } catch (err) {
+          console.error("Failed to load subscribed businesses:", err);
+        }
+      }
+    };
+
     fetchBusinesses();
     fetchSavedBusinesses();
+    fetchSubscribedBusinesses();
   }, [user]);
 
   const handleSaveBusiness = async (businessId: string) => {
@@ -83,6 +100,26 @@ const BusinessCard = () => {
       setSavedBusinesses((prev) => prev.filter((id) => id !== businessId));
     } catch (err) {
       console.error("Failed to unsave business:", err);
+    }
+  };
+
+  const handleSubscribe = async (businessId: string) => {
+    try {
+      await api.post("/businesses/subscribe", { businessId });
+      setSubscribedBusinesses((prev) => [...prev, businessId]);
+      alert("Subscribed successfully!");
+    } catch (err) {
+      console.error("Failed to subscribe:", err);
+    }
+  };
+
+  const handleUnsubscribe = async (businessId: string) => {
+    try {
+      await api.post("/businesses/unsubscribe", { businessId });
+      setSubscribedBusinesses((prev) => prev.filter((id) => id !== businessId));
+      alert("Unsubscribed successfully!");
+    } catch (err) {
+      console.error("Failed to unsubscribe:", err);
     }
   };
 
@@ -124,7 +161,7 @@ const BusinessCard = () => {
             </div>
 
             {/* Buttons Container */}
-            <div className="flex justify-between mt-4">
+            <div className="flex flex-col gap-2 mt-4">
               {savedBusinesses.includes(business._id) ? (
                 <Button
                   variant="outline"
@@ -138,6 +175,21 @@ const BusinessCard = () => {
                   onClick={() => handleSaveBusiness(business._id)}
                 >
                   <i className="fa fa-heart"></i> Save
+                </Button>
+              )}
+              {subscribedBusinesses.includes(business._id) ? (
+                <Button
+                  variant="outline"
+                  onClick={() => handleUnsubscribe(business._id)}
+                >
+                  <i className="fa fa-bell-slash"></i> Unsubscribe
+                </Button>
+              ) : (
+                <Button
+                  variant="outline"
+                  onClick={() => handleSubscribe(business._id)}
+                >
+                  <i className="fa fa-bell"></i> Subscribe
                 </Button>
               )}
               <Dialog>
