@@ -14,6 +14,3 @@ createRoot(document.getElementById("root")!).render(
     </AuthProvider>
   </StrictMode>
 );
-
-// const { user, login, logout } = useAuth()
-// const { plan, setPlan } = usePlan();

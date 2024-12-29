@@ -1,1 +1,6 @@
-// A hook for authentication-related operations (e.g., login/logout).
+import { useAuth } from "../context/AuthContext";
+
+export const useAuthStatus = () => {
+  const { user } = useAuth();
+  return !!user; // Returns true if user is logged in
+};
