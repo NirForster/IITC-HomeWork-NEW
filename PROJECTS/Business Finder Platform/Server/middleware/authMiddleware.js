@@ -20,3 +20,8 @@ const verifyToken = (req, res, next) => {
 };
 
 module.exports = { verifyToken };
+
+// הבעיה זה שהוא לא מגיע אפילו לשורה 2 הוא ישר מחזיר invalid token.
+// מצד שני כן נשלח לפרונט הקוקי טוקן פשוט כנראה למקום הלא נכון?
+// ה cookie token appers in the devtools Network when sending a req
+//  but not in the application cookie storage??

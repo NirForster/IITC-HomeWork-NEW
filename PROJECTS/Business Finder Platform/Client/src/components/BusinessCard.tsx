@@ -88,7 +88,7 @@ const BusinessCard = () => {
 
   const fetchComments = async (businessId: string) => {
     try {
-      const response = await api.get(`/businesses/${businessId}/comments`);
+      const response = await api.get(`/businesses/${businessId}/all-comments`);
       setComments(response.data);
     } catch (err) {
       console.error("Failed to fetch comments:", err);
