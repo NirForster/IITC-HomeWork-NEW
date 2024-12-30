@@ -1,5 +1,7 @@
+const jwt = require("jsonwebtoken");
+
 const verifyToken = (req, res, next) => {
-  console.log("Cookies received in request:", req.cookies); // Log cookies
+  console.log("Cookies received in request:", req.headers.cookie); // Log cookies
 
   const token = req.cookies.authToken; // Extract token from cookies
   if (!token) {

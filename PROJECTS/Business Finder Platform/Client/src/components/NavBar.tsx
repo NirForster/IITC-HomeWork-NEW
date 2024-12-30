@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import whiteLogoIcon from "../assets/logo-icon-white.png";
+// import whiteLogoIcon from "../assets/logo-icon-white.png";
 import blackLogoIcon from "../assets/logo-icon-dark.png";
 import CustomDropdownMenu from "./CustomDropdownMenu";
 import { useAuth } from "../context/AuthContext";

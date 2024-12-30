@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../assets/business-finder-logo.png";
 import { SignUpCardForm } from "../components/SignUpCardForm";
 
